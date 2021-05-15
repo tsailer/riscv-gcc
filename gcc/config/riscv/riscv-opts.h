@@ -52,7 +52,8 @@ extern enum riscv_isa_spec_class riscv_isa_spec;
 /* Keep this list in sync with define_attr "tune" in riscv.md.  */
 enum riscv_microarchitecture_type {
   generic,
-  sifive_7
+  sifive_7,
+  amethyst
 };
 extern enum riscv_microarchitecture_type riscv_microarchitecture;
 
@@ -88,5 +89,7 @@ enum riscv_align_data {
 
 #define TARGET_ZICSR    ((riscv_zi_subext & MASK_ZICSR) != 0)
 #define TARGET_ZIFENCEI ((riscv_zi_subext & MASK_ZIFENCEI) != 0)
+
+#define TARGET_AMETHYST (riscv_microarchitecture == amethyst)
 
 #endif /* ! GCC_RISCV_OPTS_H */

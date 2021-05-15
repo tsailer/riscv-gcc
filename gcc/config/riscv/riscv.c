@@ -300,6 +300,19 @@ static const struct riscv_tune_param sifive_7_tune_info = {
   true,						/* slow_unaligned_access */
 };
 
+/* Costs to use when optimizing for amethyst.  */
+static const struct riscv_tune_param amethyst_tune_info = {
+  {COSTS_N_INSNS (4), COSTS_N_INSNS (5)},	/* fp_add */
+  {COSTS_N_INSNS (4), COSTS_N_INSNS (5)},	/* fp_mul */
+  {COSTS_N_INSNS (20), COSTS_N_INSNS (20)},	/* fp_div */
+  {COSTS_N_INSNS (2), COSTS_N_INSNS (2)},	/* int_mul */
+  {COSTS_N_INSNS (6), COSTS_N_INSNS (6)},	/* int_div */
+  1,						/* issue_rate */
+  3,						/* branch_cost */
+  2,						/* memory_cost */
+  false,					/* slow_unaligned_access */
+};
+
 /* Costs to use when optimizing for size.  */
 static const struct riscv_tune_param optimize_size_tune_info = {
   {COSTS_N_INSNS (1), COSTS_N_INSNS (1)},	/* fp_add */
@@ -348,6 +361,7 @@ static const struct riscv_tune_info riscv_tune_info_table[] = {
   { "sifive-3-series", generic, &rocket_tune_info },
   { "sifive-5-series", generic, &rocket_tune_info },
   { "sifive-7-series", sifive_7, &sifive_7_tune_info },
+  { "amethyst", amethyst, &amethyst_tune_info },
   { "size", generic, &optimize_size_tune_info },
 };
 
@@ -2016,6 +2030,8 @@ bool
 riscv_split_64bit_move_p (rtx dest, rtx src)
 {
   if (TARGET_64BIT)
+    return false;
+  if (TARGET_AMETHYST && (MEM_P (src) || MEM_P (dest)))
     return false;
 
   /* Allow FPR <-> FPR and FPR <-> MEM moves, and permit the special case
