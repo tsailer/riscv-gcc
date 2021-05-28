@@ -44,7 +44,7 @@
   UNSPEC_LROUND
 
   ;; Bitmanip
-  UNSPEC_PCNTW
+  UNSPEC_CPOPW
 
   ;; Stack tie
   UNSPEC_TIE
@@ -2472,13 +2472,13 @@
   ""
   "")
 
-(define_insn "riscv_pcntw"
+(define_insn "riscv_cpopw"
   [(set (match_operand:SI 0 "register_operand" "=r")
 	(unspec
 	    [(match_operand:SI 1 "register_operand" "r")]
-	    UNSPEC_PCNTW))]
+	    UNSPEC_CPOPW))]
   ""
-  "pcntw\t%0,%1")
+  "cpopw\t%0,%1")
 
 (define_insn "riscv_frflags"
   [(set (match_operand:SI 0 "register_operand" "=r")

@@ -255,8 +255,8 @@ enum riscv_microarchitecture_type riscv_microarchitecture;
 
 /* Index R is the smallest register class that contains register R.  */
 const enum reg_class riscv_regno_to_class[FIRST_PSEUDO_REGISTER] = {
-  GR_REGS,	GR_REGS,	GR_REGS,	GR_REGS,
-  GR_REGS,	GR_REGS,	SIBCALL_REGS,	SIBCALL_REGS,
+  GREVEN_REGS,	GRODD_REGS,	GREVEN_REGS,	GRODD_REGS,
+  GREVEN_REGS,	GRODD_REGS,	SIBCALL_REGS,	SIBCALL_REGS,
   JALR_REGS,	JALR_REGS,	SIBCALL_REGS,	SIBCALL_REGS,
   SIBCALL_REGS,	SIBCALL_REGS,	SIBCALL_REGS,	SIBCALL_REGS,
   SIBCALL_REGS,	SIBCALL_REGS,	JALR_REGS,	JALR_REGS,
@@ -408,7 +408,7 @@ riscv_build_integer_1 (struct riscv_integer_op codes[RISCV_MAX_INTEGER_OPS],
     {
       if (TARGET_ZBS && SINGLE_BIT_MASK_OPERAND (value))
 	{
-	  /* Simply SBSET.  */
+	  /* Simply BSET.  */
 	  codes[0].code = UNKNOWN;
 	  codes[0].value = value;
 	  return 1;
@@ -1805,7 +1805,7 @@ riscv_rtx_costs (rtx x, machine_mode mode, int outer_code, int opno ATTRIBUTE_UN
 	  *total = COSTS_N_INSNS (SINGLE_SHIFT_COST);
 	  return true;
 	}
-      /* This is an sbext.  */
+      /* This is an bext.  */
       if (TARGET_ZBS && outer_code == SET
 	  && GET_CODE (XEXP (x, 1)) == CONST_INT
 	  && INTVAL (XEXP (x, 1)) == 1)
@@ -2109,7 +2109,7 @@ riscv_output_move (rtx dest, rtx src)
 
 	  if (TARGET_64BIT && TARGET_ZBS
 	      && SINGLE_BIT_MASK_OPERAND (INTVAL (src)))
-	    return "sbseti\t%0,zero,%S1";
+	    return "bseti\t%0,zero,%S1";
 
 	  /* Should never reach here.  */
 	  abort ();

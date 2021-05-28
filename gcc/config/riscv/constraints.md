@@ -32,6 +32,12 @@
 (define_register_constraint "l" "JALR_REGS"
   "@internal")
 
+(define_register_constraint "Re" "GREVEN_REGS"
+  "Even registers")
+
+(define_register_constraint "Ro" "GRODD_REGS"
+  "Odd registers")
+
 ;; General constraints
 
 (define_constraint "I"

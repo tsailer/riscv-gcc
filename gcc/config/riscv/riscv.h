@@ -398,6 +398,8 @@ enum reg_class
   NO_REGS,			/* no registers in set */
   SIBCALL_REGS,			/* registers used by indirect sibcalls */
   JALR_REGS,			/* registers used by indirect calls */
+  GREVEN_REGS,			/* even integer registers */
+  GRODD_REGS,			/* odd integer registers */
   GR_REGS,			/* integer registers */
   FP_REGS,			/* floating-point registers */
   FRAME_REGS,			/* arg pointer and frame pointer */
@@ -418,6 +420,8 @@ enum reg_class
   "NO_REGS",								\
   "SIBCALL_REGS",							\
   "JALR_REGS",								\
+  "GREVEN_REGS",							\
+  "GRODD_REGS",								\
   "GR_REGS",								\
   "FP_REGS",								\
   "FRAME_REGS",								\
@@ -440,6 +444,8 @@ enum reg_class
   { 0x00000000, 0x00000000, 0x00000000 },	/* NO_REGS */		\
   { 0xf003fcc0, 0x00000000, 0x00000000 },	/* SIBCALL_REGS */	\
   { 0xffffffc0, 0x00000000, 0x00000000 },	/* JALR_REGS */		\
+  { 0x55555555, 0x00000000, 0x00000000 },	/* GREVEN_REGS */	\
+  { 0xaaaaaaaa, 0x00000000, 0x00000000 },	/* GRODD_REGS */	\
   { 0xffffffff, 0x00000000, 0x00000000 },	/* GR_REGS */		\
   { 0x00000000, 0xffffffff, 0x00000000 },	/* FP_REGS */		\
   { 0x00000000, 0x00000000, 0x00000003 },	/* FRAME_REGS */	\
@@ -501,7 +507,7 @@ enum reg_class
 
 /* The following macros use B extension instructions to load constants.  */
 
-/* If this is a single bit mask, then we can load it with sbseti.  But this
+/* If this is a single bit mask, then we can load it with bseti.  But this
    is not useful for any of the low 31 bits because we can use addi or lui
    to load them.  It is wrong for loading SImode 0x80000000 on rv64 because it
    needs to be sign-extended.  So we restrict this to the upper 32-bits
