@@ -68,6 +68,11 @@ riscv_implied_info_t riscv_implied_info[] =
   {"b", "zbf"},
   {"b", "zbc"},
   {"b", "zbm"},
+  {"k", "zkne"},
+  {"k", "zknd"},
+  {"k", "zknh"},
+  {"k", "zksh"},
+  {"k", "zksed"},
   {NULL, NULL}
 };
 
@@ -119,17 +124,25 @@ static const struct riscv_ext_version riscv_ext_version_table[] =
   {"zifencei", ISA_SPEC_CLASS_20191213, 2, 0},
   {"zifencei", ISA_SPEC_CLASS_20190608, 2, 0},
 
-  {"b",   ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zba", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbb", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbc", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbe", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbf", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbr", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbm", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbs", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbt", ISA_SPEC_CLASS_NONE, 0, 92},
-  {"zbp", ISA_SPEC_CLASS_NONE, 0, 92},
+  {"b",   ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zba", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbb", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbc", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbe", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbf", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbr", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbm", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbs", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbt", ISA_SPEC_CLASS_NONE, 0, 94},
+  {"zbp", ISA_SPEC_CLASS_NONE, 0, 94},
+
+  {"k",     ISA_SPEC_CLASS_NONE, 0, 90},
+  {"zkne",  ISA_SPEC_CLASS_NONE, 0, 90},
+  {"zknd",  ISA_SPEC_CLASS_NONE, 0, 90},
+  {"zknh",  ISA_SPEC_CLASS_NONE, 0, 90},
+  {"zksh",  ISA_SPEC_CLASS_NONE, 0, 90},
+  {"zksed", ISA_SPEC_CLASS_NONE, 0, 90},
+
   /* Terminate the list.  */
   {NULL, ISA_SPEC_CLASS_NONE, 0, 0}
 };
@@ -561,7 +574,7 @@ riscv_subset_list::lookup (const char *subset, int major_version,
 static const char *
 riscv_supported_std_ext (void)
 {
-  return "mafdqlcbjtpvn";
+  return "mafdqlcbjtpvnk";
 }
 
 /* Parsing subset version.
@@ -977,6 +990,7 @@ static const riscv_ext_flag_table_t riscv_ext_flag_table[] =
   {"d", &gcc_options::x_target_flags, MASK_DOUBLE_FLOAT},
   {"c", &gcc_options::x_target_flags, MASK_RVC},
   {"b", &gcc_options::x_target_flags, MASK_BITMANIP},
+  {"k", &gcc_options::x_target_flags, MASK_CRYPTO},
 
   {"zicsr",    &gcc_options::x_riscv_zi_subext, MASK_ZICSR},
   {"zifencei", &gcc_options::x_riscv_zi_subext, MASK_ZIFENCEI},
@@ -991,6 +1005,13 @@ static const riscv_ext_flag_table_t riscv_ext_flag_table[] =
   {"zbc", &gcc_options::x_riscv_bitmanip_subext, MASK_ZBC},
   {"zbm", &gcc_options::x_riscv_bitmanip_subext, MASK_ZBM},
   {"zbt", &gcc_options::x_riscv_bitmanip_subext, MASK_ZBT},
+
+  {"zknd", &gcc_options::x_riscv_crypto_subext, MASK_ZKND},
+  {"zkne", &gcc_options::x_riscv_crypto_subext, MASK_ZKNE},
+  {"zknh", &gcc_options::x_riscv_crypto_subext, MASK_ZKNH},
+  {"zksh", &gcc_options::x_riscv_crypto_subext, MASK_ZKSH},
+  {"zksed", &gcc_options::x_riscv_crypto_subext, MASK_ZKSED},
+
   {NULL, NULL, 0}
 };
 

@@ -130,6 +130,8 @@ Mask(MUL)
 
 Mask(BITMANIP)
 
+Mask(CRYPTO)
+
 Mask(ATOMIC)
 
 Mask(HARD_FLOAT)
@@ -163,6 +165,9 @@ int riscv_bitmanip_subext
 
 TargetVariable
 int riscv_zi_subext
+
+TargetVariable
+int riscv_crypto_subext
 
 Enum
 Name(isa_spec_class) Type(enum riscv_isa_spec_class)
