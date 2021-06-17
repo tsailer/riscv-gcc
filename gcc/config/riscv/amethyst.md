@@ -1,6 +1,6 @@
-;; Generic DFA-based pipeline description for RISC-V targets.
-;; Copyright (C) 2011-2020 Free Software Foundation, Inc.
-;; Contributed by Andrew Waterman (andrew@sifive.com).
+;; DFA-based pipeline description for Amethyst.
+;; Copyright (C) 2021 Free Software Foundation, Inc.
+;; Contributed by Thomas Sailer (t.sailer@alumni.ethz.ch).
 ;; Based on MIPS target for GNU compiler.
 
 ;; This file is part of GCC.
@@ -19,6 +19,7 @@
 ;; along with GCC; see the file COPYING3.  If not see
 ;; <http://www.gnu.org/licenses/>.
 
+(define_attr "rfwriteports" "" (symbol_ref "riscv_amethyst_regfile_halves (insn)"))
 
 (define_automaton "amethyst")
 (define_cpu_unit "am_alua" "amethyst")

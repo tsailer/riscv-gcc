@@ -23,6 +23,11 @@ riscv-shorten-memrefs.o: $(srcdir)/config/riscv/riscv-shorten-memrefs.c
 	$(COMPILE) $<
 	$(POSTCOMPILE)
 
+amethyst.o: $(srcdir)/config/riscv/amethyst.c $(CONFIG_H) \
+  $(SYSTEM_H)
+	$(COMPILER) -c $(ALL_COMPILERFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
+		$(srcdir)/config/riscv/amethyst.c
+
 PASSES_EXTRA += $(srcdir)/config/riscv/riscv-passes.def
 
 $(common_out_file): $(srcdir)/config/riscv/riscv-cores.def
