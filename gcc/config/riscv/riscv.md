@@ -136,6 +136,8 @@
 	 (const_string "yes")]
 	(const_string "no")))
 
+(define_attr "insnpair" "no,yes" (const_string "no"))
+
 ;; Classification of each insn.
 ;; branch	conditional branch
 ;; jump		unconditional jump
@@ -208,6 +210,8 @@
 				  (le (minus (pc) (match_dup 0)) (const_int 4092)))
 	  (const_int 4)
 	  (const_int 8))
+
+	  (eq_attr "insnpair" "yes") (const_int 8)
 
 	  ;; Conservatively assume calls take two instructions (AUIPC + JALR).
 	  ;; The linker will opportunistically relax the sequence to JAL.

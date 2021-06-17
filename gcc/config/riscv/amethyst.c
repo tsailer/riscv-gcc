@@ -24,6 +24,7 @@ along with GCC; see the file COPYING3.  If not see
 #include "coretypes.h"
 #include "tm.h"
 #include "rtl.h"
+#include "insn-attr-common.h"
 
 /* Return the number of instructions needed to implement INSN,
    given that it loads from or stores to MEM. */
@@ -58,8 +59,17 @@ riscv_amethyst_regfile_halves_rtx (rtx x)
   }
 }
 
-int
+enum attr_rfwriteports
 riscv_amethyst_regfile_halves (rtx_insn *insn)
 {
-  return riscv_amethyst_regfile_halves_rtx (PATTERN(insn));
+  switch (riscv_amethyst_regfile_halves_rtx (PATTERN(insn))) {
+  case 0:
+    return RFWRITEPORTS_NONE;
+  case 1:
+    return RFWRITEPORTS_EVEN;
+  case 2:
+    return RFWRITEPORTS_ODD;
+  default:
+    return RFWRITEPORTS_BOTH;
+  }
 }
