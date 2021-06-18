@@ -131,8 +131,7 @@
    (set_attr "mode" "SI")
    (set_attr "insnpair" "yes")])
 
-
-
+(include "amethystsimd.md")
 
 
 

@@ -464,8 +464,8 @@
   [(set (match_operand:DI          0 "register_operand" "=r,r")
 	(plus:DI (match_operand:DI 1 "register_operand" " r,r")
 		 (match_operand:DI 2 "arith_operand"    " r,I")))]
-  "TARGET_64BIT"
-  "add%i2\t%0,%1,%2"
+  "TARGET_64BIT || TARGET_AMETHYST"
+  { return TARGET_AMETHYST ? "pdadd.d\t%0,%1,%2" : "add%i2\t%0,%1,%2"; }
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
@@ -511,8 +511,8 @@
   [(set (match_operand:DI 0            "register_operand" "= r")
 	(minus:DI (match_operand:DI 1  "reg_or_0_operand" " rJ")
 		   (match_operand:DI 2 "register_operand" "  r")))]
-  "TARGET_64BIT"
-  "sub\t%0,%z1,%2"
+  "TARGET_64BIT || TARGET_AMETHYST"
+  { return TARGET_AMETHYST ? "pdsub.d\t%0,%1,%2" : "sub\t%0,%z1,%2"; }
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
@@ -549,8 +549,8 @@
 (define_insn "negdi2"
   [(set (match_operand:DI         0 "register_operand" "=r")
 	(neg:DI (match_operand:DI 1 "register_operand" " r")))]
-  "TARGET_64BIT"
-  "neg\t%0,%1"
+  "TARGET_64BIT || TARGET_AMETHYST"
+  { return TARGET_AMETHYST ? "pdsub.d\t%0,x0,%1" : "neg\t%0,%1"; }
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
