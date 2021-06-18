@@ -73,6 +73,66 @@
                     (match_dup 1)))]
    {})
 
+(define_expand "divmodsi4"
+  [(parallel
+    [(set (match_operand:SI 0 "register_operand" "")
+          (div:SI (match_operand:SI 1 "register_operand" "")
+                  (match_operand:SI 2 "register_operand" "")))
+     (set (match_operand:SI 3 "register_operand" "")
+          (mod:SI (match_dup 1) (match_dup 2)))])]
+  "TARGET_AMETHYST"
+  "")
+
+(define_insn "*divmodsi4_insn"
+  [(set (match_operand:SI 0 "register_operand"         "=Re,Ro")
+        (div:SI (match_operand:SI 1 "register_operand" " r, r")
+                (match_operand:SI 2 "register_operand" " r, r")))
+   (set (match_operand:SI 3 "register_operand"         "=Ro,Re")
+        (mod:SI (match_dup 1) (match_dup 2)))]
+  "TARGET_AMETHYST"
+{
+  if (find_reg_note (insn, REG_UNUSED, operands[3]))
+    return "div\t%0,%1,%2";
+  else if (find_reg_note (insn, REG_UNUSED, operands[0]))
+    return "rem\t%3,%1,%2";
+  else
+    return "div\t%0,%1,%2 ; rem\t%3,%1,%2";
+}
+  [(set_attr "type" "idiv")
+   (set_attr "mode" "SI")
+   (set_attr "insnpair" "yes")])
+
+(define_expand "udivmodsi4"
+  [(parallel
+    [(set (match_operand:SI 0 "register_operand" "")
+          (udiv:SI (match_operand:SI 1 "register_operand" "")
+                   (match_operand:SI 2 "register_operand" "")))
+     (set (match_operand:SI 3 "register_operand" "")
+          (umod:SI (match_dup 1) (match_dup 2)))])]
+  "TARGET_AMETHYST"
+  "")
+
+(define_insn "*udivmodsi4_insn"
+  [(set (match_operand:SI 0 "register_operand"          "=Re,Ro")
+        (udiv:SI (match_operand:SI 1 "register_operand" " r, r")
+                 (match_operand:SI 2 "register_operand" " r, r")))
+   (set (match_operand:SI 3 "register_operand"          "=Ro,Re")
+        (umod:SI (match_dup 1) (match_dup 2)))]
+  "TARGET_AMETHYST"
+{
+  if (find_reg_note (insn, REG_UNUSED, operands[3]))
+    return "divu\t%0,%1,%2";
+  else if (find_reg_note (insn, REG_UNUSED, operands[0]))
+    return "remu\t%3,%1,%2";
+  else
+    return "divu\t%0,%1,%2 ; remu\t%3,%1,%2";
+}
+  [(set_attr "type" "idiv")
+   (set_attr "mode" "SI")
+   (set_attr "insnpair" "yes")])
+
+
+
 
 
 
