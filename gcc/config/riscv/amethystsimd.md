@@ -1113,22 +1113,23 @@
 
 (define_insn "amethyst_simd_pwhadd_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (vec_select:V4QI (vec_concat:V4QI
-      (plus:V2QI
-        (vec_select:V2QI
-          (match_operand:V4QI 1 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2QI
-          (match_dup 1)
-          (parallel [(const_int 1) (const_int 3)])))
-      (plus:V2QI
-        (vec_select:V2QI
-          (match_operand:V4QI 2 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2QI
-          (match_dup 2)
-          (parallel [(const_int 1) (const_int 3)]))))
-    (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
+     (vec_select:V4QI
+       (vec_concat:V4QI
+         (plus:V2QI
+           (vec_select:V2QI
+             (match_operand:V4QI 1 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2QI
+             (match_dup 1)
+             (parallel [(const_int 1) (const_int 3)])))
+         (plus:V2QI
+           (vec_select:V2QI
+             (match_operand:V4QI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2QI
+             (match_dup 2)
+             (parallel [(const_int 1) (const_int 3)]))))
+       (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
   "TARGET_AMETHYST"
   "pwhadd.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1136,22 +1137,23 @@
 
 (define_insn "amethyst_simd_pwhsub_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (vec_select:V4QI (vec_concat:V4QI
-      (minus:V2QI
-        (vec_select:V2QI
-          (match_operand:V4QI 1 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2QI
-          (match_dup 1)
-          (parallel [(const_int 1) (const_int 3)])))
-      (minus:V2QI
-        (vec_select:V2QI
-          (match_operand:V4QI 2 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2QI
-          (match_dup 2)
-          (parallel [(const_int 1) (const_int 3)]))))
-    (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
+     (vec_select:V4QI
+       (vec_concat:V4QI
+         (minus:V2QI
+           (vec_select:V2QI
+             (match_operand:V4QI 1 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2QI
+             (match_dup 1)
+             (parallel [(const_int 1) (const_int 3)])))
+         (minus:V2QI
+           (vec_select:V2QI
+             (match_operand:V4QI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2QI
+             (match_dup 2)
+             (parallel [(const_int 1) (const_int 3)]))))
+       (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
   "TARGET_AMETHYST"
   "pwhsub.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1159,22 +1161,23 @@
 
 (define_insn "amethyst_simd_pwhadd_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (vec_select:V2HI (vec_concat:V2HI
-      (plus:HI
-        (vec_select:HI
-          (match_operand:V2HI 1 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:HI
-          (match_dup 1)
-          (parallel [(const_int 1)])))
-      (plus:HI
-        (vec_select:HI
-          (match_operand:V2HI 2 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:HI
-          (match_dup 2)
-          (parallel [(const_int 1)]))))
-    (parallel [(const_int 0) (const_int 1)])))]
+     (vec_select:V2HI
+       (vec_concat:V2HI
+         (plus:HI
+           (vec_select:HI
+             (match_operand:V2HI 1 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:HI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (plus:HI
+           (vec_select:HI
+             (match_operand:V2HI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:HI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))
+       (parallel [(const_int 0) (const_int 1)])))]
   "TARGET_AMETHYST"
   "pwhadd.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1182,22 +1185,23 @@
 
 (define_insn "amethyst_simd_pwhsub_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (vec_select:V2HI (vec_concat:V2HI
-      (minus:HI
-        (vec_select:HI
-          (match_operand:V2HI 1 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:HI
-          (match_dup 1)
-          (parallel [(const_int 1)])))
-      (minus:HI
-        (vec_select:HI
-          (match_operand:V2HI 2 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:HI
-          (match_dup 2)
-          (parallel [(const_int 1)]))))
-    (parallel [(const_int 0) (const_int 1)])))]
+     (vec_select:V2HI
+       (vec_concat:V2HI
+         (minus:HI
+           (vec_select:HI
+             (match_operand:V2HI 1 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:HI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (minus:HI
+           (vec_select:HI
+             (match_operand:V2HI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:HI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))
+       (parallel [(const_int 0) (const_int 1)])))]
   "TARGET_AMETHYST"
   "pwhsub.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1205,22 +1209,23 @@
 
 (define_insn "amethyst_simd_pdhadd_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (vec_select:V8QI (vec_concat:V8QI
-      (plus:V4QI
-        (vec_select:V4QI
-          (match_operand:V8QI 1 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
-        (vec_select:V4QI
-          (match_dup 1)
-          (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)])))
-      (plus:V4QI
-        (vec_select:V4QI
-          (match_operand:V8QI 2 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
-        (vec_select:V4QI
-          (match_dup 2)
-          (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)]))))
-    (parallel [(const_int 0) (const_int 4) (const_int 1) (const_int 5) (const_int 2) (const_int 6) (const_int 3) (const_int 7)])))]
+     (vec_select:V8QI
+       (vec_concat:V8QI
+         (plus:V4QI
+           (vec_select:V4QI
+             (match_operand:V8QI 1 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
+           (vec_select:V4QI
+             (match_dup 1)
+             (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)])))
+         (plus:V4QI
+           (vec_select:V4QI
+             (match_operand:V8QI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
+           (vec_select:V4QI
+             (match_dup 2)
+             (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)]))))
+       (parallel [(const_int 0) (const_int 4) (const_int 1) (const_int 5) (const_int 2) (const_int 6) (const_int 3) (const_int 7)])))]
   "TARGET_AMETHYST"
   "pdhadd.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1228,22 +1233,23 @@
 
 (define_insn "amethyst_simd_pdhsub_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (vec_select:V8QI (vec_concat:V8QI
-      (minus:V4QI
-        (vec_select:V4QI
-          (match_operand:V8QI 1 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
-        (vec_select:V4QI
-          (match_dup 1)
-          (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)])))
-      (minus:V4QI
-        (vec_select:V4QI
-          (match_operand:V8QI 2 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
-        (vec_select:V4QI
-          (match_dup 2)
-          (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)]))))
-    (parallel [(const_int 0) (const_int 4) (const_int 1) (const_int 5) (const_int 2) (const_int 6) (const_int 3) (const_int 7)])))]
+     (vec_select:V8QI
+       (vec_concat:V8QI
+         (minus:V4QI
+           (vec_select:V4QI
+             (match_operand:V8QI 1 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
+           (vec_select:V4QI
+             (match_dup 1)
+             (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)])))
+         (minus:V4QI
+           (vec_select:V4QI
+             (match_operand:V8QI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2) (const_int 4) (const_int 6)]))
+           (vec_select:V4QI
+             (match_dup 2)
+             (parallel [(const_int 1) (const_int 3) (const_int 5) (const_int 7)]))))
+       (parallel [(const_int 0) (const_int 4) (const_int 1) (const_int 5) (const_int 2) (const_int 6) (const_int 3) (const_int 7)])))]
   "TARGET_AMETHYST"
   "pdhsub.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1251,22 +1257,23 @@
 
 (define_insn "amethyst_simd_pdhadd_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (vec_select:V4HI (vec_concat:V4HI
-      (plus:V2HI
-        (vec_select:V2HI
-          (match_operand:V4HI 1 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2HI
-          (match_dup 1)
-          (parallel [(const_int 1) (const_int 3)])))
-      (plus:V2HI
-        (vec_select:V2HI
-          (match_operand:V4HI 2 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2HI
-          (match_dup 2)
-          (parallel [(const_int 1) (const_int 3)]))))
-    (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
+     (vec_select:V4HI
+       (vec_concat:V4HI
+         (plus:V2HI
+           (vec_select:V2HI
+             (match_operand:V4HI 1 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2HI
+             (match_dup 1)
+             (parallel [(const_int 1) (const_int 3)])))
+         (plus:V2HI
+           (vec_select:V2HI
+             (match_operand:V4HI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2HI
+             (match_dup 2)
+             (parallel [(const_int 1) (const_int 3)]))))
+       (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
   "TARGET_AMETHYST"
   "pdhadd.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1274,22 +1281,23 @@
 
 (define_insn "amethyst_simd_pdhsub_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (vec_select:V4HI (vec_concat:V4HI
-      (minus:V2HI
-        (vec_select:V2HI
-          (match_operand:V4HI 1 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2HI
-          (match_dup 1)
-          (parallel [(const_int 1) (const_int 3)])))
-      (minus:V2HI
-        (vec_select:V2HI
-          (match_operand:V4HI 2 "register_operand" "r")
-          (parallel [(const_int 0) (const_int 2)]))
-        (vec_select:V2HI
-          (match_dup 2)
-          (parallel [(const_int 1) (const_int 3)]))))
-    (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
+     (vec_select:V4HI
+       (vec_concat:V4HI
+         (minus:V2HI
+           (vec_select:V2HI
+             (match_operand:V4HI 1 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2HI
+             (match_dup 1)
+             (parallel [(const_int 1) (const_int 3)])))
+         (minus:V2HI
+           (vec_select:V2HI
+             (match_operand:V4HI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 2)]))
+           (vec_select:V2HI
+             (match_dup 2)
+             (parallel [(const_int 1) (const_int 3)]))))
+       (parallel [(const_int 0) (const_int 2) (const_int 1) (const_int 3)])))]
   "TARGET_AMETHYST"
   "pdhsub.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1297,22 +1305,23 @@
 
 (define_insn "amethyst_simd_pdhadd_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (vec_select:V2SI (vec_concat:V2SI
-      (plus:SI
-        (vec_select:SI
-          (match_operand:V2SI 1 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:SI
-          (match_dup 1)
-          (parallel [(const_int 1)])))
-      (plus:SI
-        (vec_select:SI
-          (match_operand:V2SI 2 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:SI
-          (match_dup 2)
-          (parallel [(const_int 1)]))))
-    (parallel [(const_int 0) (const_int 1)])))]
+     (vec_select:V2SI
+       (vec_concat:V2SI
+         (plus:SI
+           (vec_select:SI
+             (match_operand:V2SI 1 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:SI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (plus:SI
+           (vec_select:SI
+             (match_operand:V2SI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:SI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))
+       (parallel [(const_int 0) (const_int 1)])))]
   "TARGET_AMETHYST"
   "pdhadd.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1320,22 +1329,23 @@
 
 (define_insn "amethyst_simd_pdhsub_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (vec_select:V2SI (vec_concat:V2SI
-      (minus:SI
-        (vec_select:SI
-          (match_operand:V2SI 1 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:SI
-          (match_dup 1)
-          (parallel [(const_int 1)])))
-      (minus:SI
-        (vec_select:SI
-          (match_operand:V2SI 2 "register_operand" "r")
-          (parallel [(const_int 0)]))
-        (vec_select:SI
-          (match_dup 2)
-          (parallel [(const_int 1)]))))
-    (parallel [(const_int 0) (const_int 1)])))]
+     (vec_select:V2SI
+       (vec_concat:V2SI
+         (minus:SI
+           (vec_select:SI
+             (match_operand:V2SI 1 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:SI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (minus:SI
+           (vec_select:SI
+             (match_operand:V2SI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))
+           (vec_select:SI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))
+       (parallel [(const_int 0) (const_int 1)])))]
   "TARGET_AMETHYST"
   "pdhsub.w\t%0,%1,%2"
   [(set_attr "type" "arith")
