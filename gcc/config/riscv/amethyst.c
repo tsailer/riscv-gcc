@@ -73,3 +73,8 @@ riscv_amethyst_regfile_halves (rtx_insn *insn)
     return RFWRITEPORTS_BOTH;
   }
 }
+
+const char *
+riscv_amethyst_output_veccmp (rtx op)
+{
+}
