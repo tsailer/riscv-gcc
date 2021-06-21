@@ -1955,612 +1955,646 @@
 
 (define_insn "amethyst_simd_pwand"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (and:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (and:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pwand\t%0,%2,%1"
+  "pwand\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwor"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (ior:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (ior:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pwor\t%0,%2,%1"
+  "pwor\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwxor"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (xor:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (xor:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pwxor\t%0,%2,%1"
+  "pwxor\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwandn"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (and:SI
-      (not:SI (match_operand:SI 1 "register_operand" "r"))
-      (match_operand:SI 2 "register_operand" "r")))]
+     (and:SI
+       (not:SI
+         (match_operand:SI 2 "register_operand" "r"))
+       (match_operand:SI 1 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pwandn\t%0,%2,%1"
+  "pwandn\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pworn"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (ior:SI
-      (not:SI (match_operand:SI 1 "register_operand" "r"))
-      (match_operand:SI 2 "register_operand" "r")))]
+     (ior:SI
+       (not:SI
+         (match_operand:SI 2 "register_operand" "r"))
+       (match_operand:SI 1 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pworn\t%0,%2,%1"
+  "pworn\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwxnor"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (not:SI (xor:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r"))))]
+     (not:SI
+       (xor:SI
+         (match_operand:SI 1 "register_operand" "r")
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
-  "pwxnor\t%0,%2,%1"
+  "pwxnor\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdand"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (and:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (and:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pdand\t%0,%2,%1"
+  "pdand\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdor"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (ior:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (ior:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pdor\t%0,%2,%1"
+  "pdor\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdxor"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (xor:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (xor:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pdxor\t%0,%2,%1"
+  "pdxor\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdandn"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (and:DI
-      (not:DI (match_operand:DI 1 "register_operand" "r"))
-      (match_operand:DI 2 "register_operand" "r")))]
+     (and:DI
+       (not:DI
+         (match_operand:DI 2 "register_operand" "r"))
+       (match_operand:DI 1 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pdandn\t%0,%2,%1"
+  "pdandn\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdorn"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (ior:DI
-      (not:DI (match_operand:DI 1 "register_operand" "r"))
-      (match_operand:DI 2 "register_operand" "r")))]
+     (ior:DI
+       (not:DI
+         (match_operand:DI 2 "register_operand" "r"))
+       (match_operand:DI 1 "register_operand" "r")))]
   "TARGET_AMETHYST"
-  "pdorn\t%0,%2,%1"
+  "pdorn\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdxnor"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (not:DI (xor:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r"))))]
+     (not:DI
+       (xor:DI
+         (match_operand:DI 1 "register_operand" "r")
+         (match_operand:DI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
-  "pdxnor\t%0,%2,%1"
+  "pdxnor\t%0,%1,%2"
   [(set_attr "type" "arith")
    (set_attr "mode" "DI")])
 
 (define_insn "ashlv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (ashift:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsll.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "lshrv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (lshiftrt:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsrl.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "ashrv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (ashiftrt:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsra.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwslo_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (not:V4QI (ashift:V4QI
-      (not:V4QI (match_operand:V4QI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V4QI
+       (ashift:V4QI
+         (not:V4QI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwslo.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwsro_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (not:V4QI (lshiftrt:V4QI
-      (not:V4QI (match_operand:V4QI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V4QI
+       (lshiftrt:V4QI
+         (not:V4QI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwsro.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "rotlv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (rotate:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwrol.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "rotrv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (rotatert:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwror.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "ashlv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (ashift:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsll.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "lshrv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (lshiftrt:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsrl.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "ashrv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (ashiftrt:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsra.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwslo_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (not:V2HI (ashift:V2HI
-      (not:V2HI (match_operand:V2HI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V2HI
+       (ashift:V2HI
+         (not:V2HI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwslo.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwsro_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (not:V2HI (lshiftrt:V2HI
-      (not:V2HI (match_operand:V2HI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V2HI
+       (lshiftrt:V2HI
+         (not:V2HI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwsro.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "rotlv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (rotate:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwrol.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "rotrv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (rotatert:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwror.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwsll_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (ashift:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsll.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwsrl_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (lshiftrt:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsrl.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwsra_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (ashiftrt:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsra.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwslo_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (not:SI (ashift:SI
-      (not:SI (match_operand:SI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:SI
+       (ashift:SI
+         (not:SI
+           (match_operand:SI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwslo.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwsro_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (not:SI (lshiftrt:SI
-      (not:SI (match_operand:SI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:SI
+       (lshiftrt:SI
+         (not:SI
+           (match_operand:SI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwsro.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwrol_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (rotate:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwrol.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwror_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (rotatert:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pwror.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "SI")])
 
 (define_insn "ashlv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (ashift:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsll.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "lshrv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (lshiftrt:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsrl.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "ashrv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (ashiftrt:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsra.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdslo_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (not:V8QI (ashift:V8QI
-      (not:V8QI (match_operand:V8QI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V8QI
+       (ashift:V8QI
+         (not:V8QI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdslo.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsro_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (not:V8QI (lshiftrt:V8QI
-      (not:V8QI (match_operand:V8QI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V8QI
+       (lshiftrt:V8QI
+         (not:V8QI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdsro.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "rotlv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (rotate:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdrol.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "rotrv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (rotatert:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdror.b\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "ashlv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (ashift:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsll.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "lshrv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (lshiftrt:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsrl.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "ashrv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (ashiftrt:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsra.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdslo_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (not:V4HI (ashift:V4HI
-      (not:V4HI (match_operand:V4HI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V4HI
+       (ashift:V4HI
+         (not:V4HI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdslo.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsro_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (not:V4HI (lshiftrt:V4HI
-      (not:V4HI (match_operand:V4HI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V4HI
+       (lshiftrt:V4HI
+         (not:V4HI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdsro.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "rotlv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (rotate:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdrol.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "rotrv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (rotatert:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdror.h\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "ashlv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (ashift:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsll.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "lshrv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (lshiftrt:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsrl.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "ashrv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (ashiftrt:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsra.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdslo_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (not:V2SI (ashift:V2SI
-      (not:V2SI (match_operand:V2SI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V2SI
+       (ashift:V2SI
+         (not:V2SI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdslo.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsro_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (not:V2SI (lshiftrt:V2SI
-      (not:V2SI (match_operand:V2SI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:V2SI
+       (lshiftrt:V2SI
+         (not:V2SI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdsro.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "rotlv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (rotate:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdrol.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "rotrv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (rotatert:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdror.w\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsll_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (ashift:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashift:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsll.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsrl_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (lshiftrt:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (lshiftrt:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsrl.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsra_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (ashiftrt:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (ashiftrt:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsra.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdslo_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (not:DI (ashift:DI
-      (not:DI (match_operand:DI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:DI
+       (ashift:DI
+         (not:DI
+           (match_operand:DI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdslo.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdsro_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (not:DI (lshiftrt:DI
-      (not:DI (match_operand:DI 1 "register_operand" "r"))
-      (match_operand:QI 2 "arith_operand"))))]
+     (not:DI
+       (lshiftrt:DI
+         (not:DI
+           (match_operand:DI 1 "register_operand" "r"))
+         (match_operand:QI 2 "arith_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdsro.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdrol_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (rotate:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotate:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdrol.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdror_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (rotatert:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:QI 2 "arith_operand")))]
+     (rotatert:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:QI 2 "arith_operand" "r")))]
   "TARGET_AMETHYST"
   "pdror.d\t%0,%1,%2"
-  [(set_attr "type" "arith")
+  [(set_attr "type" "shift")
    (set_attr "mode" "DI")])
 
 (define_insn "smulv4qi3_highpart"
