@@ -109,8 +109,11 @@ struct riscv_cpu_info {
 extern const riscv_cpu_info *riscv_find_cpu (const char *);
 
 /* Routines implemented in amethyst.c.  */
-#ifdef HAVE_ATTR_rfwriteports
-extern enum attr_rfwriteports riscv_amethyst_regfile_halves (rtx_insn *insn);
+#ifdef HAVE_ATTR_amethyst_rfwriteports
+extern enum attr_amethyst_rfwriteports riscv_amethyst_regfile_halves (rtx_insn *insn);
+#endif
+#ifdef HAVE_ATTR_amethyst_maypipeb
+extern enum attr_amethyst_maypipeb riscv_amethyst_maypipeb (rtx_insn *insn);
 #endif
 
 #endif /* ! GCC_RISCV_PROTOS_H */

@@ -2610,7 +2610,8 @@
   "TARGET_AMETHYST"
   "pwmulsst.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "mulv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2620,7 +2621,8 @@
   "TARGET_AMETHYST"
   "pwmulssb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulssbqu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2633,7 +2635,8 @@
   "TARGET_AMETHYST"
   "pwmulssbqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "ssmulv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2646,7 +2649,8 @@
   "TARGET_AMETHYST"
   "pwmulssbqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsut_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2661,7 +2665,8 @@
   "TARGET_AMETHYST"
   "pwmulsut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsub_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2674,7 +2679,8 @@
   "TARGET_AMETHYST"
   "pwmulsub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsubqu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2687,7 +2693,8 @@
   "TARGET_AMETHYST"
   "pwmulsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsubqs_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2700,7 +2707,8 @@
   "TARGET_AMETHYST"
   "pwmulsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "umulv4qi3_highpart"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2715,7 +2723,8 @@
   "TARGET_AMETHYST"
   "pwmuluut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluub_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2728,7 +2737,8 @@
   "TARGET_AMETHYST"
   "pwmuluub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "usmulv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2741,7 +2751,8 @@
   "TARGET_AMETHYST"
   "pwmuluubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluubqs_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -2754,7 +2765,8 @@
   "TARGET_AMETHYST"
   "pwmuluubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "smulv2hi3_highpart"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2769,7 +2781,8 @@
   "TARGET_AMETHYST"
   "pwmulsst.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "mulv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2779,7 +2792,8 @@
   "TARGET_AMETHYST"
   "pwmulssb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulssbqu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2792,7 +2806,8 @@
   "TARGET_AMETHYST"
   "pwmulssbqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "ssmulv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2805,7 +2820,8 @@
   "TARGET_AMETHYST"
   "pwmulssbqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulsut_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2820,7 +2836,8 @@
   "TARGET_AMETHYST"
   "pwmulsut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulsub_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2833,7 +2850,8 @@
   "TARGET_AMETHYST"
   "pwmulsub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulsubqu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2846,7 +2864,8 @@
   "TARGET_AMETHYST"
   "pwmulsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulsubqs_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2859,7 +2878,8 @@
   "TARGET_AMETHYST"
   "pwmulsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "umulv2hi3_highpart"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2874,7 +2894,8 @@
   "TARGET_AMETHYST"
   "pwmuluut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmuluub_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2887,7 +2908,8 @@
   "TARGET_AMETHYST"
   "pwmuluub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "usmulv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2900,7 +2922,8 @@
   "TARGET_AMETHYST"
   "pwmuluubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmuluubqs_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -2913,7 +2936,8 @@
   "TARGET_AMETHYST"
   "pwmuluubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulsst_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -2928,7 +2952,8 @@
   "TARGET_AMETHYST"
   "pwmulsst.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulssb_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -2938,7 +2963,8 @@
   "TARGET_AMETHYST"
   "pwmulssb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulssbqu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -2951,7 +2977,8 @@
   "TARGET_AMETHYST"
   "pwmulssbqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "ssmulsi3"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -2964,7 +2991,8 @@
   "TARGET_AMETHYST"
   "pwmulssbqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsut_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -2979,7 +3007,8 @@
   "TARGET_AMETHYST"
   "pwmulsut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsub_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -2992,7 +3021,8 @@
   "TARGET_AMETHYST"
   "pwmulsub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsubqu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -3005,7 +3035,8 @@
   "TARGET_AMETHYST"
   "pwmulsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsubqs_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -3018,7 +3049,8 @@
   "TARGET_AMETHYST"
   "pwmulsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluut_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -3033,7 +3065,8 @@
   "TARGET_AMETHYST"
   "pwmuluut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluub_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -3046,7 +3079,8 @@
   "TARGET_AMETHYST"
   "pwmuluub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "usmulsi3"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -3059,7 +3093,8 @@
   "TARGET_AMETHYST"
   "pwmuluubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluubqs_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -3072,7 +3107,8 @@
   "TARGET_AMETHYST"
   "pwmuluubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "smulv8qi3_highpart"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3087,7 +3123,8 @@
   "TARGET_AMETHYST"
   "pdmulsst.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "mulv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3097,7 +3134,8 @@
   "TARGET_AMETHYST"
   "pdmulssb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulssbqu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3110,7 +3148,8 @@
   "TARGET_AMETHYST"
   "pdmulssbqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "ssmulv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3123,7 +3162,8 @@
   "TARGET_AMETHYST"
   "pdmulssbqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsut_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3138,7 +3178,8 @@
   "TARGET_AMETHYST"
   "pdmulsut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsub_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3151,7 +3192,8 @@
   "TARGET_AMETHYST"
   "pdmulsub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsubqu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3164,7 +3206,8 @@
   "TARGET_AMETHYST"
   "pdmulsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsubqs_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3177,7 +3220,8 @@
   "TARGET_AMETHYST"
   "pdmulsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "umulv8qi3_highpart"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3192,7 +3236,8 @@
   "TARGET_AMETHYST"
   "pdmuluut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmuluub_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3205,7 +3250,8 @@
   "TARGET_AMETHYST"
   "pdmuluub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "usmulv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3218,7 +3264,8 @@
   "TARGET_AMETHYST"
   "pdmuluubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmuluubqs_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3231,7 +3278,8 @@
   "TARGET_AMETHYST"
   "pdmuluubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "smulv4hi3_highpart"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3246,7 +3294,8 @@
   "TARGET_AMETHYST"
   "pdmulsst.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "mulv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3256,7 +3305,8 @@
   "TARGET_AMETHYST"
   "pdmulssb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulssbqu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3269,7 +3319,8 @@
   "TARGET_AMETHYST"
   "pdmulssbqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "ssmulv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3282,7 +3333,8 @@
   "TARGET_AMETHYST"
   "pdmulssbqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulsut_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3297,7 +3349,8 @@
   "TARGET_AMETHYST"
   "pdmulsut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulsub_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3310,7 +3363,8 @@
   "TARGET_AMETHYST"
   "pdmulsub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulsubqu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3323,7 +3377,8 @@
   "TARGET_AMETHYST"
   "pdmulsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulsubqs_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3336,7 +3391,8 @@
   "TARGET_AMETHYST"
   "pdmulsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "umulv4hi3_highpart"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3351,7 +3407,8 @@
   "TARGET_AMETHYST"
   "pdmuluut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmuluub_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3364,7 +3421,8 @@
   "TARGET_AMETHYST"
   "pdmuluub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "usmulv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3377,7 +3435,8 @@
   "TARGET_AMETHYST"
   "pdmuluubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmuluubqs_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3390,7 +3449,8 @@
   "TARGET_AMETHYST"
   "pdmuluubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "smulv2si3_highpart"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3405,7 +3465,8 @@
   "TARGET_AMETHYST"
   "pdmulsst.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "mulv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3415,7 +3476,8 @@
   "TARGET_AMETHYST"
   "pdmulssb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulssbqu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3428,7 +3490,8 @@
   "TARGET_AMETHYST"
   "pdmulssbqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "ssmulv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3441,7 +3504,8 @@
   "TARGET_AMETHYST"
   "pdmulssbqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsut_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3456,7 +3520,8 @@
   "TARGET_AMETHYST"
   "pdmulsut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsub_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3469,7 +3534,8 @@
   "TARGET_AMETHYST"
   "pdmulsub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsubqu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3482,7 +3548,8 @@
   "TARGET_AMETHYST"
   "pdmulsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulsubqs_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3495,7 +3562,8 @@
   "TARGET_AMETHYST"
   "pdmulsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "umulv2si3_highpart"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3510,7 +3578,8 @@
   "TARGET_AMETHYST"
   "pdmuluut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmuluub_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3523,7 +3592,8 @@
   "TARGET_AMETHYST"
   "pdmuluub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "usmulv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3536,7 +3606,8 @@
   "TARGET_AMETHYST"
   "pdmuluubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmuluubqs_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3549,7 +3620,8 @@
   "TARGET_AMETHYST"
   "pdmuluubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmulssw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3561,7 +3633,8 @@
   "TARGET_AMETHYST"
   "pwmulssw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsuw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3573,7 +3646,8 @@
   "TARGET_AMETHYST"
   "pwmulsuw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluuw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3585,7 +3659,8 @@
   "TARGET_AMETHYST"
   "pwmuluuw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulssw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3597,7 +3672,8 @@
   "TARGET_AMETHYST"
   "pwmulssw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulsuw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3609,7 +3685,8 @@
   "TARGET_AMETHYST"
   "pwmulsuw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmuluuw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3621,7 +3698,8 @@
   "TARGET_AMETHYST"
   "pwmuluuw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulssw_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -3633,7 +3711,8 @@
   "TARGET_AMETHYST"
   "pwmulssw.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulsuw_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -3645,7 +3724,8 @@
   "TARGET_AMETHYST"
   "pwmulsuw.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmuluuw_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -3657,7 +3737,8 @@
   "TARGET_AMETHYST"
   "pwmuluuw.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulcct_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -3684,7 +3765,8 @@
   "TARGET_AMETHYST"
   "pwmulcct.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmulccb_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -3704,7 +3786,8 @@
   "TARGET_AMETHYST"
   "pwmulccb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmulccbq_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -3729,7 +3812,8 @@
   "TARGET_AMETHYST"
   "pwmulccbq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmulcct_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -3756,7 +3840,8 @@
   "TARGET_AMETHYST"
   "pwmulcct.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulccb_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -3776,7 +3861,8 @@
   "TARGET_AMETHYST"
   "pwmulccb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulccbq_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -3801,7 +3887,8 @@
   "TARGET_AMETHYST"
   "pwmulccbq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulcct_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3828,7 +3915,8 @@
   "TARGET_AMETHYST"
   "pdmulcct.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmulccb_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3848,7 +3936,8 @@
   "TARGET_AMETHYST"
   "pdmulccb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmulccbq_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -3873,7 +3962,8 @@
   "TARGET_AMETHYST"
   "pdmulccbq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmulcct_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3900,7 +3990,8 @@
   "TARGET_AMETHYST"
   "pdmulcct.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulccb_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3920,7 +4011,8 @@
   "TARGET_AMETHYST"
   "pdmulccb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulccbq_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -3945,7 +4037,8 @@
   "TARGET_AMETHYST"
   "pdmulccbq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulcct_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3972,7 +4065,8 @@
   "TARGET_AMETHYST"
   "pdmulcct.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmulccb_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -3992,7 +4086,8 @@
   "TARGET_AMETHYST"
   "pdmulccb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmulccbq_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -4017,7 +4112,8 @@
   "TARGET_AMETHYST"
   "pdmulccbq.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pwmulccw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -4041,7 +4137,8 @@
   "TARGET_AMETHYST"
   "pwmulccw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmulccw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -4065,7 +4162,8 @@
   "TARGET_AMETHYST"
   "pwmulccw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulcrt_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -4082,7 +4180,8 @@
   "TARGET_AMETHYST"
   "pwmulcrt.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulcrb_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -4094,7 +4193,8 @@
   "TARGET_AMETHYST"
   "pwmulcrb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulcrbq_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
@@ -4109,7 +4209,8 @@
   "TARGET_AMETHYST"
   "pwmulcrbq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulcrt_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -4125,7 +4226,8 @@
   "TARGET_AMETHYST"
   "pwmulcrt.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulcrb_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -4136,7 +4238,8 @@
   "TARGET_AMETHYST"
   "pwmulcrb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmulcrbq_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -4150,7 +4253,8 @@
   "TARGET_AMETHYST"
   "pwmulcrbq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pdmulcrt_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -4167,7 +4271,8 @@
   "TARGET_AMETHYST"
   "pdmulcrt.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulcrb_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -4179,7 +4284,8 @@
   "TARGET_AMETHYST"
   "pdmulcrb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulcrbq_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
@@ -4194,7 +4300,8 @@
   "TARGET_AMETHYST"
   "pdmulcrbq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulcrt_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -4211,7 +4318,8 @@
   "TARGET_AMETHYST"
   "pdmulcrt.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulcrb_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -4223,7 +4331,8 @@
   "TARGET_AMETHYST"
   "pdmulcrb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulcrbq_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -4238,7 +4347,8 @@
   "TARGET_AMETHYST"
   "pdmulcrbq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmulcrt_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -4254,7 +4364,8 @@
   "TARGET_AMETHYST"
   "pdmulcrt.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulcrb_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -4265,7 +4376,8 @@
   "TARGET_AMETHYST"
   "pdmulcrb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmulcrbq_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -4279,7 +4391,8 @@
   "TARGET_AMETHYST"
   "pdmulcrbq.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmulcrw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
@@ -4293,7 +4406,8 @@
   "TARGET_AMETHYST"
   "pwmulcrw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmulcrw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -4306,7 +4420,8 @@
   "TARGET_AMETHYST"
   "pwmulcrw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4354,7 +4469,8 @@
   "TARGET_AMETHYST"
   "pwmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4402,7 +4518,8 @@
   "TARGET_AMETHYST"
   "pwmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4452,7 +4569,8 @@
   "TARGET_AMETHYST"
   "pwmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4502,7 +4620,8 @@
   "TARGET_AMETHYST"
   "pwmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4548,7 +4667,8 @@
   "TARGET_AMETHYST"
   "pwzmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4594,7 +4714,8 @@
   "TARGET_AMETHYST"
   "pwzmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4641,7 +4762,8 @@
   "TARGET_AMETHYST"
   "pwzmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4688,7 +4810,8 @@
   "TARGET_AMETHYST"
   "pwzmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4736,7 +4859,8 @@
   "TARGET_AMETHYST"
   "pwmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4784,7 +4908,8 @@
   "TARGET_AMETHYST"
   "pwmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4834,7 +4959,8 @@
   "TARGET_AMETHYST"
   "pwmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4884,7 +5010,8 @@
   "TARGET_AMETHYST"
   "pwmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4931,7 +5058,8 @@
   "TARGET_AMETHYST"
   "pwzmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -4978,7 +5106,8 @@
   "TARGET_AMETHYST"
   "pwzmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -5026,7 +5155,8 @@
   "TARGET_AMETHYST"
   "pwzmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -5074,7 +5204,8 @@
   "TARGET_AMETHYST"
   "pwzmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5102,7 +5233,8 @@
   "TARGET_AMETHYST"
   "pwmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5130,7 +5262,8 @@
   "TARGET_AMETHYST"
   "pwmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5160,7 +5293,8 @@
   "TARGET_AMETHYST"
   "pwmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5190,7 +5324,8 @@
   "TARGET_AMETHYST"
   "pwmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5216,7 +5351,8 @@
   "TARGET_AMETHYST"
   "pwzmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5242,7 +5378,8 @@
   "TARGET_AMETHYST"
   "pwzmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5269,7 +5406,8 @@
   "TARGET_AMETHYST"
   "pwzmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5296,7 +5434,8 @@
   "TARGET_AMETHYST"
   "pwzmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5324,7 +5463,8 @@
   "TARGET_AMETHYST"
   "pwmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5352,7 +5492,8 @@
   "TARGET_AMETHYST"
   "pwmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5382,7 +5523,8 @@
   "TARGET_AMETHYST"
   "pwmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5412,7 +5554,8 @@
   "TARGET_AMETHYST"
   "pwmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5439,7 +5582,8 @@
   "TARGET_AMETHYST"
   "pwzmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5466,7 +5610,8 @@
   "TARGET_AMETHYST"
   "pwzmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5494,7 +5639,8 @@
   "TARGET_AMETHYST"
   "pwzmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -5522,7 +5668,8 @@
   "TARGET_AMETHYST"
   "pwzmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5536,7 +5683,8 @@
   "TARGET_AMETHYST"
   "pwmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5550,7 +5698,8 @@
   "TARGET_AMETHYST"
   "pwmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5566,7 +5715,8 @@
   "TARGET_AMETHYST"
   "pwmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5582,7 +5732,8 @@
   "TARGET_AMETHYST"
   "pwmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5594,7 +5745,8 @@
   "TARGET_AMETHYST"
   "pwzmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5606,7 +5758,8 @@
   "TARGET_AMETHYST"
   "pwzmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5619,7 +5772,8 @@
   "TARGET_AMETHYST"
   "pwzmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5632,7 +5786,8 @@
   "TARGET_AMETHYST"
   "pwzmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5646,7 +5801,8 @@
   "TARGET_AMETHYST"
   "pwmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5660,7 +5816,8 @@
   "TARGET_AMETHYST"
   "pwmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5676,7 +5833,8 @@
   "TARGET_AMETHYST"
   "pwmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5692,7 +5850,8 @@
   "TARGET_AMETHYST"
   "pwmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5705,7 +5864,8 @@
   "TARGET_AMETHYST"
   "pwzmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5718,7 +5878,8 @@
   "TARGET_AMETHYST"
   "pwzmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5732,7 +5893,8 @@
   "TARGET_AMETHYST"
   "pwzmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -5746,7 +5908,8 @@
   "TARGET_AMETHYST"
   "pwzmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -5834,7 +5997,8 @@
   "TARGET_AMETHYST"
   "pdmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -5922,7 +6086,8 @@
   "TARGET_AMETHYST"
   "pdmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6012,7 +6177,8 @@
   "TARGET_AMETHYST"
   "pdmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6102,7 +6268,8 @@
   "TARGET_AMETHYST"
   "pdmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6188,7 +6355,8 @@
   "TARGET_AMETHYST"
   "pdzmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6274,7 +6442,8 @@
   "TARGET_AMETHYST"
   "pdzmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6361,7 +6530,8 @@
   "TARGET_AMETHYST"
   "pdzmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6448,7 +6618,8 @@
   "TARGET_AMETHYST"
   "pdzmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6536,7 +6707,8 @@
   "TARGET_AMETHYST"
   "pdmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6624,7 +6796,8 @@
   "TARGET_AMETHYST"
   "pdmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6714,7 +6887,8 @@
   "TARGET_AMETHYST"
   "pdmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6804,7 +6978,8 @@
   "TARGET_AMETHYST"
   "pdmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6891,7 +7066,8 @@
   "TARGET_AMETHYST"
   "pdzmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -6978,7 +7154,8 @@
   "TARGET_AMETHYST"
   "pdzmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -7066,7 +7243,8 @@
   "TARGET_AMETHYST"
   "pdzmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
@@ -7154,7 +7332,8 @@
   "TARGET_AMETHYST"
   "pdzmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7202,7 +7381,8 @@
   "TARGET_AMETHYST"
   "pdmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7250,7 +7430,8 @@
   "TARGET_AMETHYST"
   "pdmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7300,7 +7481,8 @@
   "TARGET_AMETHYST"
   "pdmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7350,7 +7532,8 @@
   "TARGET_AMETHYST"
   "pdmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7396,7 +7579,8 @@
   "TARGET_AMETHYST"
   "pdzmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7442,7 +7626,8 @@
   "TARGET_AMETHYST"
   "pdzmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7489,7 +7674,8 @@
   "TARGET_AMETHYST"
   "pdzmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7536,7 +7722,8 @@
   "TARGET_AMETHYST"
   "pdzmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7584,7 +7771,8 @@
   "TARGET_AMETHYST"
   "pdmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7632,7 +7820,8 @@
   "TARGET_AMETHYST"
   "pdmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7682,7 +7871,8 @@
   "TARGET_AMETHYST"
   "pdmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7732,7 +7922,8 @@
   "TARGET_AMETHYST"
   "pdmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7779,7 +7970,8 @@
   "TARGET_AMETHYST"
   "pdzmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7826,7 +8018,8 @@
   "TARGET_AMETHYST"
   "pdzmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7874,7 +8067,8 @@
   "TARGET_AMETHYST"
   "pdzmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -7922,7 +8116,8 @@
   "TARGET_AMETHYST"
   "pdzmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -7950,7 +8145,8 @@
   "TARGET_AMETHYST"
   "pdmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -7978,7 +8174,8 @@
   "TARGET_AMETHYST"
   "pdmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8008,7 +8205,8 @@
   "TARGET_AMETHYST"
   "pdmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8038,7 +8236,8 @@
   "TARGET_AMETHYST"
   "pdmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8064,7 +8263,8 @@
   "TARGET_AMETHYST"
   "pdzmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8090,7 +8290,8 @@
   "TARGET_AMETHYST"
   "pdzmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8117,7 +8318,8 @@
   "TARGET_AMETHYST"
   "pdzmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8144,7 +8346,8 @@
   "TARGET_AMETHYST"
   "pdzmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8172,7 +8375,8 @@
   "TARGET_AMETHYST"
   "pdmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8200,7 +8404,8 @@
   "TARGET_AMETHYST"
   "pdmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8230,7 +8435,8 @@
   "TARGET_AMETHYST"
   "pdmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8260,7 +8466,8 @@
   "TARGET_AMETHYST"
   "pdmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8287,7 +8494,8 @@
   "TARGET_AMETHYST"
   "pdzmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8314,7 +8522,8 @@
   "TARGET_AMETHYST"
   "pdzmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8342,7 +8551,8 @@
   "TARGET_AMETHYST"
   "pdzmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -8370,7 +8580,8 @@
   "TARGET_AMETHYST"
   "pdzmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmacccc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8458,7 +8669,8 @@
   "TARGET_AMETHYST"
   "pwmacccc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmaccccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8548,7 +8760,8 @@
   "TARGET_AMETHYST"
   "pwmaccccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwzmacccc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8634,7 +8847,8 @@
   "TARGET_AMETHYST"
   "pwzmacccc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwzmaccccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8721,7 +8935,8 @@
   "TARGET_AMETHYST"
   "pwzmaccccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmsubcc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8809,7 +9024,8 @@
   "TARGET_AMETHYST"
   "pwmsubcc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmsubccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8899,7 +9115,8 @@
   "TARGET_AMETHYST"
   "pwmsubccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwzmsubcc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -8986,7 +9203,8 @@
   "TARGET_AMETHYST"
   "pwzmsubcc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwzmsubccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -9074,7 +9292,8 @@
   "TARGET_AMETHYST"
   "pwzmsubccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmacccc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9122,7 +9341,8 @@
   "TARGET_AMETHYST"
   "pwmacccc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmaccccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9172,7 +9392,8 @@
   "TARGET_AMETHYST"
   "pwmaccccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmacccc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9218,7 +9439,8 @@
   "TARGET_AMETHYST"
   "pwzmacccc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmaccccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9265,7 +9487,8 @@
   "TARGET_AMETHYST"
   "pwzmaccccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubcc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9313,7 +9536,8 @@
   "TARGET_AMETHYST"
   "pwmsubcc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9363,7 +9587,8 @@
   "TARGET_AMETHYST"
   "pwmsubccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubcc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9410,7 +9635,8 @@
   "TARGET_AMETHYST"
   "pwzmsubcc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -9458,7 +9684,8 @@
   "TARGET_AMETHYST"
   "pwzmsubccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmacccc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -9626,7 +9853,8 @@
   "TARGET_AMETHYST"
   "pdmacccc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmaccccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -9796,7 +10024,8 @@
   "TARGET_AMETHYST"
   "pdmaccccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdzmacccc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -9962,7 +10191,8 @@
   "TARGET_AMETHYST"
   "pdzmacccc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdzmaccccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -10129,7 +10359,8 @@
   "TARGET_AMETHYST"
   "pdzmaccccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmsubcc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -10297,7 +10528,8 @@
   "TARGET_AMETHYST"
   "pdmsubcc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmsubccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -10467,7 +10699,8 @@
   "TARGET_AMETHYST"
   "pdmsubccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdzmsubcc_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -10634,7 +10867,8 @@
   "TARGET_AMETHYST"
   "pdzmsubcc.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdzmsubccq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -10802,7 +11036,8 @@
   "TARGET_AMETHYST"
   "pdzmsubccq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_pdmacccc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -10890,7 +11125,8 @@
   "TARGET_AMETHYST"
   "pdmacccc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmaccccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -10980,7 +11216,8 @@
   "TARGET_AMETHYST"
   "pdmaccccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmacccc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11066,7 +11303,8 @@
   "TARGET_AMETHYST"
   "pdzmacccc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmaccccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11153,7 +11391,8 @@
   "TARGET_AMETHYST"
   "pdzmaccccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubcc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11241,7 +11480,8 @@
   "TARGET_AMETHYST"
   "pdmsubcc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11331,7 +11571,8 @@
   "TARGET_AMETHYST"
   "pdmsubccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubcc_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11418,7 +11659,8 @@
   "TARGET_AMETHYST"
   "pdzmsubcc.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubccq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11506,7 +11748,8 @@
   "TARGET_AMETHYST"
   "pdzmsubccq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pwmacccr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11554,7 +11797,8 @@
   "TARGET_AMETHYST"
   "pwmacccr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmacccrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11604,7 +11848,8 @@
   "TARGET_AMETHYST"
   "pwmacccrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmacccr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11650,7 +11895,8 @@
   "TARGET_AMETHYST"
   "pwzmacccr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmacccrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11697,7 +11943,8 @@
   "TARGET_AMETHYST"
   "pwzmacccrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubcr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11745,7 +11992,8 @@
   "TARGET_AMETHYST"
   "pwmsubcr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmsubcrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11795,7 +12043,8 @@
   "TARGET_AMETHYST"
   "pwmsubcrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubcr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11842,7 +12091,8 @@
   "TARGET_AMETHYST"
   "pwzmsubcr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwzmsubcrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -11890,7 +12140,8 @@
   "TARGET_AMETHYST"
   "pwzmsubcrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pwmacccr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11914,7 +12165,8 @@
   "TARGET_AMETHYST"
   "pwmacccr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmacccrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11940,7 +12192,8 @@
   "TARGET_AMETHYST"
   "pwmacccrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmacccr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11962,7 +12215,8 @@
   "TARGET_AMETHYST"
   "pwzmacccr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmacccrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -11985,7 +12239,8 @@
   "TARGET_AMETHYST"
   "pwzmacccrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmsubcr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12009,7 +12264,8 @@
   "TARGET_AMETHYST"
   "pwmsubcr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwmsubcrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12035,7 +12291,8 @@
   "TARGET_AMETHYST"
   "pwmsubcrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmsubcr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12058,7 +12315,8 @@
   "TARGET_AMETHYST"
   "pwzmsubcr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pwzmsubcrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12082,7 +12340,8 @@
   "TARGET_AMETHYST"
   "pwzmsubcrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "amethyst_simd_pdmacccr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12170,7 +12429,8 @@
   "TARGET_AMETHYST"
   "pdmacccr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmacccrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12260,7 +12520,8 @@
   "TARGET_AMETHYST"
   "pdmacccrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmacccr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12346,7 +12607,8 @@
   "TARGET_AMETHYST"
   "pdzmacccr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmacccrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12433,7 +12695,8 @@
   "TARGET_AMETHYST"
   "pdzmacccrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubcr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12521,7 +12784,8 @@
   "TARGET_AMETHYST"
   "pdmsubcr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmsubcrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12611,7 +12875,8 @@
   "TARGET_AMETHYST"
   "pdmsubcrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubcr_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12698,7 +12963,8 @@
   "TARGET_AMETHYST"
   "pdzmsubcr.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdzmsubcrq_b"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -12786,7 +13052,8 @@
   "TARGET_AMETHYST"
   "pdzmsubcrq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_pdmacccr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12834,7 +13101,8 @@
   "TARGET_AMETHYST"
   "pdmacccr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmacccrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12884,7 +13152,8 @@
   "TARGET_AMETHYST"
   "pdmacccrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmacccr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12930,7 +13199,8 @@
   "TARGET_AMETHYST"
   "pdzmacccr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmacccrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -12977,7 +13247,8 @@
   "TARGET_AMETHYST"
   "pdzmacccrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmsubcr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13025,7 +13296,8 @@
   "TARGET_AMETHYST"
   "pdmsubcr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdmsubcrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13075,7 +13347,8 @@
   "TARGET_AMETHYST"
   "pdmsubcrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmsubcr_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13122,7 +13395,8 @@
   "TARGET_AMETHYST"
   "pdzmsubcr.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_pdzmsubcrq_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13170,7 +13444,8 @@
   "TARGET_AMETHYST"
   "pdzmsubcrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "amethyst_simd_crot_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -13181,7 +13456,8 @@
   "TARGET_AMETHYST"
   "crot.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_cmagarg_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -13192,7 +13468,8 @@
   "TARGET_AMETHYST"
   "cmagarg.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_chrot_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -13203,7 +13480,8 @@
   "TARGET_AMETHYST"
   "chrot.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_chmagarg_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
@@ -13214,7 +13492,8 @@
   "TARGET_AMETHYST"
   "chmagarg.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "SI")])
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "amethyst_simd_crot_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13225,7 +13504,8 @@
   "TARGET_AMETHYST"
   "crot.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_cmagarg_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13236,7 +13516,8 @@
   "TARGET_AMETHYST"
   "cmagarg.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_chrot_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13247,7 +13528,8 @@
   "TARGET_AMETHYST"
   "chrot.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "amethyst_simd_chmagarg_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
@@ -13258,4 +13540,5 @@
   "TARGET_AMETHYST"
   "chmagarg.w\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
