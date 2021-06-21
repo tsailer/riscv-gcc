@@ -68,7 +68,7 @@ riscv_amethyst_regfile_halves (rtx_insn *insn)
   case 1:
     return RFWRITEPORTS_EVEN;
   case 2:
-    return RFWRITEPORTS_ODD
+    return RFWRITEPORTS_ODD;
   default:
     return RFWRITEPORTS_BOTH;
   }

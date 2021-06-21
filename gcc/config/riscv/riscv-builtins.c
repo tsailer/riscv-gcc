@@ -41,6 +41,7 @@ along with GCC; see the file COPYING3.  If not see
 #define RISCV_FTYPE_NAME0(A) RISCV_##A##_FTYPE
 #define RISCV_FTYPE_NAME1(A, B) RISCV_##A##_FTYPE_##B
 #define RISCV_FTYPE_NAME2(A, B, C) RISCV_##A##_FTYPE_##B##_##C
+#define RISCV_FTYPE_NAME3(A, B, C, D) RISCV_##A##_FTYPE_##B##_##C##_##D
 
 /* Classifies the prototype of a built-in function.  */
 enum riscv_function_type {
@@ -88,6 +89,7 @@ struct riscv_builtin_description {
 
 AVAIL (bitmanip64, TARGET_64BIT && TARGET_BITMANIP)
 AVAIL (hard_float, TARGET_HARD_FLOAT)
+AVAIL (amethyst, TARGET_AMETHYST)
 
 /* Construct a riscv_builtin_description from the given arguments.
 
@@ -120,8 +122,28 @@ AVAIL (hard_float, TARGET_HARD_FLOAT)
 
 /* Argument types.  */
 #define RISCV_ATYPE_VOID void_type_node
+#define RISCV_ATYPE_UQI unsigned_intQI_type_node
+#define RISCV_ATYPE_QI intQI_type_node
+#define RISCV_ATYPE_UHI unsigned_intHI_type_node
+#define RISCV_ATYPE_HI intHI_type_node
 #define RISCV_ATYPE_USI unsigned_intSI_type_node
 #define RISCV_ATYPE_SI intSI_type_node
+#define RISCV_ATYPE_UDI unsigned_intDI_type_node
+#define RISCV_ATYPE_DI intDI_type_node
+
+tree intV2HI_type_node;
+tree intV2QI_type_node;
+tree intV2SI_type_node;
+tree intV4HI_type_node;
+tree intV4QI_type_node;
+tree intV8QI_type_node;
+
+#define RISCV_ATYPE_V2HI intV2HI_type_node
+#define RISCV_ATYPE_V2QI intV2QI_type_node
+#define RISCV_ATYPE_V2SI intV2SI_type_node
+#define RISCV_ATYPE_V4HI intV4HI_type_node
+#define RISCV_ATYPE_V4QI intV4QI_type_node
+#define RISCV_ATYPE_V8QI intV8QI_type_node
 
 /* RISCV_FTYPE_ATYPESN takes N RISCV_FTYPES-like type codes and lists
    their associated RISCV_ATYPEs.  */
@@ -133,7 +155,11 @@ AVAIL (hard_float, TARGET_HARD_FLOAT)
 #define RISCV_FTYPE_ATYPES2(A, B, C) \
   RISCV_ATYPE_##A, RISCV_ATYPE_##B, RISCV_ATYPE_##C
 
+#define RISCV_FTYPE_ATYPES3(A, B, C, D)	\
+  RISCV_ATYPE_##A, RISCV_ATYPE_##B, RISCV_ATYPE_##C, RISCV_ATYPE_##D
+
 static const struct riscv_builtin_description riscv_builtins[] = {
+#include "config/riscv/amethyst-builtins.h"
   DIRECT_BUILTIN (cpopw, RISCV_SI_FTYPE_SI, bitmanip64),
   DIRECT_BUILTIN (rolw, RISCV_SI_FTYPE_SI_SI, bitmanip64),
   DIRECT_BUILTIN (frflags, RISCV_USI_FTYPE, hard_float),
@@ -181,6 +207,13 @@ riscv_build_function_type (enum riscv_function_type type)
 void
 riscv_init_builtins (void)
 {
+  intV2HI_type_node = build_vector_type_for_mode (intHI_type_node, V2HImode);
+  intV2QI_type_node = build_vector_type_for_mode (intQI_type_node, V2QImode);
+  intV2SI_type_node = build_vector_type_for_mode (intSI_type_node, V2SImode);
+  intV4HI_type_node = build_vector_type_for_mode (intHI_type_node, V4HImode);
+  intV4QI_type_node = build_vector_type_for_mode (intQI_type_node, V4QImode);
+  intV8QI_type_node = build_vector_type_for_mode (intQI_type_node, V8QImode);
+
   for (size_t i = 0; i < ARRAY_SIZE (riscv_builtins); i++)
     {
       const struct riscv_builtin_description *d = &riscv_builtins[i];
