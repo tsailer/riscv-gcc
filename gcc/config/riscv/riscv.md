@@ -48,6 +48,12 @@
 
   ;; Stack tie
   UNSPEC_TIE
+
+  ;; Amethyst
+  UNSPEC_AMETHYST_CROT
+  UNSPEC_AMETHYST_CMAGARG
+  UNSPEC_AMETHYST_CHROT
+  UNSPEC_AMETHYST_CHMAGARG
 ])
 
 (define_c_enum "unspecv" [

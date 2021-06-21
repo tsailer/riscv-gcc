@@ -13171,3 +13171,91 @@
   "pdzmsubcrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_crot_h"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (unspec:V2HI
+       [(match_operand:V2HI 1 "register_operand" "r")
+          (match_operand:HI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CROT))]
+  "TARGET_AMETHYST"
+  "crot.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_cmagarg_h"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (unspec:V2HI
+       [(match_operand:V2HI 1 "register_operand" "r")
+          (match_operand:HI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CMAGARG))]
+  "TARGET_AMETHYST"
+  "cmagarg.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_chrot_h"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (unspec:V2HI
+       [(match_operand:V2HI 1 "register_operand" "r")
+          (match_operand:HI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CHROT))]
+  "TARGET_AMETHYST"
+  "chrot.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_chmagarg_h"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (unspec:V2HI
+       [(match_operand:V2HI 1 "register_operand" "r")
+          (match_operand:HI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CHMAGARG))]
+  "TARGET_AMETHYST"
+  "chmagarg.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_crot_w"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (unspec:V2SI
+       [(match_operand:V2SI 1 "register_operand" "r")
+          (match_operand:SI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CROT))]
+  "TARGET_AMETHYST"
+  "crot.w\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_cmagarg_w"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (unspec:V2SI
+       [(match_operand:V2SI 1 "register_operand" "r")
+          (match_operand:SI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CMAGARG))]
+  "TARGET_AMETHYST"
+  "cmagarg.w\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_chrot_w"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (unspec:V2SI
+       [(match_operand:V2SI 1 "register_operand" "r")
+          (match_operand:SI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CHROT))]
+  "TARGET_AMETHYST"
+  "chrot.w\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_chmagarg_w"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (unspec:V2SI
+       [(match_operand:V2SI 1 "register_operand" "r")
+          (match_operand:SI 2 "register_operand" "r")]
+       UNSPEC_AMETHYST_CHMAGARG))]
+  "TARGET_AMETHYST"
+  "chmagarg.w\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
