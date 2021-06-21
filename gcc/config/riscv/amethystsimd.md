@@ -2599,9 +2599,14 @@
 
 (define_insn "smulv4qi3_highpart"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (truncate:V4QI (lshiftrt:V4HI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (match_operand:V4QI 2 "register_operand" "r"))) (const_int 8))))]
+     (truncate:V4QI
+       (lshiftrt:V4HI
+         (mult:V4HI
+           (sign_extend:V4HI
+             (match_operand:V4QI 1 "register_operand" "r"))
+           (sign_extend:V4HI
+             (match_operand:V4QI 2 "register_operand" "r")))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pwmulsst.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2609,18 +2614,22 @@
 
 (define_insn "mulv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (mult:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]  "TARGET_AMETHYST"
+     (mult:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
+  "TARGET_AMETHYST"
   "pwmulssb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmulssbqu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (us_truncate:V4QI
+       (mult:V4HI
+         (sign_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (sign_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulssbqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2628,9 +2637,12 @@
 
 (define_insn "ssmulv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (ss_truncate:V4QI
+       (mult:V4HI
+         (sign_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (sign_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulssbqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2638,9 +2650,14 @@
 
 (define_insn "amethyst_simd_pwmulsut_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (truncate:V4QI (lshiftrt:V4HI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r"))) (const_int 8))))]
+     (truncate:V4QI
+       (lshiftrt:V4HI
+         (mult:V4HI
+           (sign_extend:V4HI
+             (match_operand:V4QI 1 "register_operand" "r"))
+           (sign_extend:V4HI
+             (match_operand:V4QI 2 "register_operand" "r")))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pwmulsut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2648,9 +2665,12 @@
 
 (define_insn "amethyst_simd_pwmulsub_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (truncate:V4QI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (truncate:V4QI
+       (mult:V4HI
+         (sign_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (sign_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2658,9 +2678,12 @@
 
 (define_insn "amethyst_simd_pwmulsubqu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (us_truncate:V4QI
+       (mult:V4HI
+         (sign_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (sign_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2668,9 +2691,12 @@
 
 (define_insn "amethyst_simd_pwmulsubqs_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (ss_truncate:V4QI
+       (mult:V4HI
+         (sign_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (sign_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2678,9 +2704,14 @@
 
 (define_insn "umulv4qi3_highpart"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (truncate:V4QI (lshiftrt:V4HI (mult:V4HI
-      (zero_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r"))) (const_int 8))))]
+     (truncate:V4QI
+       (lshiftrt:V4HI
+         (mult:V4HI
+           (zero_extend:V4HI
+             (match_operand:V4QI 1 "register_operand" "r"))
+           (zero_extend:V4HI
+             (match_operand:V4QI 2 "register_operand" "r")))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pwmuluut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2688,9 +2719,12 @@
 
 (define_insn "amethyst_simd_pwmuluub_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (truncate:V4QI (mult:V4HI
-      (zero_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (truncate:V4QI
+       (mult:V4HI
+         (zero_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (zero_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2698,9 +2732,12 @@
 
 (define_insn "usmulv4qi3"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (zero_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (us_truncate:V4QI
+       (mult:V4HI
+         (zero_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (zero_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2708,9 +2745,12 @@
 
 (define_insn "amethyst_simd_pwmuluubqs_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (zero_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r")))))]
+     (ss_truncate:V4QI
+       (mult:V4HI
+         (zero_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (zero_extend:V4HI
+           (match_operand:V4QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2718,9 +2758,14 @@
 
 (define_insn "smulv2hi3_highpart"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (truncate:V2HI (lshiftrt:V2SI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (match_operand:V2HI 2 "register_operand" "r"))) (const_int 16))))]
+     (truncate:V2HI
+       (lshiftrt:V2SI
+         (mult:V2SI
+           (sign_extend:V2SI
+             (match_operand:V2HI 1 "register_operand" "r"))
+           (sign_extend:V2SI
+             (match_operand:V2HI 2 "register_operand" "r")))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pwmulsst.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2728,18 +2773,22 @@
 
 (define_insn "mulv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (mult:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]  "TARGET_AMETHYST"
+     (mult:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
+  "TARGET_AMETHYST"
   "pwmulssb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmulssbqu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (us_truncate:V2HI
+       (mult:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (sign_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulssbqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2747,9 +2796,12 @@
 
 (define_insn "ssmulv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (ss_truncate:V2HI
+       (mult:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (sign_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulssbqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2757,9 +2809,14 @@
 
 (define_insn "amethyst_simd_pwmulsut_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (truncate:V2HI (lshiftrt:V2SI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r"))) (const_int 16))))]
+     (truncate:V2HI
+       (lshiftrt:V2SI
+         (mult:V2SI
+           (sign_extend:V2SI
+             (match_operand:V2HI 1 "register_operand" "r"))
+           (sign_extend:V2SI
+             (match_operand:V2HI 2 "register_operand" "r")))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pwmulsut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2767,9 +2824,12 @@
 
 (define_insn "amethyst_simd_pwmulsub_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (truncate:V2HI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (truncate:V2HI
+       (mult:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (sign_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2777,9 +2837,12 @@
 
 (define_insn "amethyst_simd_pwmulsubqu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (us_truncate:V2HI
+       (mult:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (sign_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2787,9 +2850,12 @@
 
 (define_insn "amethyst_simd_pwmulsubqs_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (ss_truncate:V2HI
+       (mult:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (sign_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2797,9 +2863,14 @@
 
 (define_insn "umulv2hi3_highpart"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (truncate:V2HI (lshiftrt:V2SI (mult:V2SI
-      (zero_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r"))) (const_int 16))))]
+     (truncate:V2HI
+       (lshiftrt:V2SI
+         (mult:V2SI
+           (zero_extend:V2SI
+             (match_operand:V2HI 1 "register_operand" "r"))
+           (zero_extend:V2SI
+             (match_operand:V2HI 2 "register_operand" "r")))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pwmuluut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2807,9 +2878,12 @@
 
 (define_insn "amethyst_simd_pwmuluub_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (truncate:V2HI (mult:V2SI
-      (zero_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (truncate:V2HI
+       (mult:V2SI
+         (zero_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (zero_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2817,9 +2891,12 @@
 
 (define_insn "usmulv2hi3"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (zero_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (us_truncate:V2HI
+       (mult:V2SI
+         (zero_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (zero_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2827,9 +2904,12 @@
 
 (define_insn "amethyst_simd_pwmuluubqs_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (zero_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r")))))]
+     (ss_truncate:V2HI
+       (mult:V2SI
+         (zero_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (zero_extend:V2SI
+           (match_operand:V2HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2837,9 +2917,14 @@
 
 (define_insn "amethyst_simd_pwmulsst_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (truncate:SI (lshiftrt:DI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (sign_extend:DI (match_operand:SI 2 "register_operand" "r"))) (const_int 32))))]
+     (truncate:SI
+       (lshiftrt:DI
+         (mult:DI
+           (sign_extend:DI
+             (match_operand:SI 1 "register_operand" "r"))
+           (sign_extend:DI
+             (match_operand:SI 2 "register_operand" "r")))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pwmulsst.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2847,18 +2932,22 @@
 
 (define_insn "amethyst_simd_pwmulssb_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (mult:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]  "TARGET_AMETHYST"
+     (mult:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
+  "TARGET_AMETHYST"
   "pwmulssb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmulssbqu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (us_truncate:SI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (sign_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (us_truncate:SI
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulssbqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2866,9 +2955,12 @@
 
 (define_insn "ssmulsi3"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (us_truncate:SI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (sign_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (ss_truncate:SI
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulssbqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2876,9 +2968,14 @@
 
 (define_insn "amethyst_simd_pwmulsut_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (truncate:SI (lshiftrt:DI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r"))) (const_int 32))))]
+     (truncate:SI
+       (lshiftrt:DI
+         (mult:DI
+           (sign_extend:DI
+             (match_operand:SI 1 "register_operand" "r"))
+           (sign_extend:DI
+             (match_operand:SI 2 "register_operand" "r")))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pwmulsut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2886,9 +2983,12 @@
 
 (define_insn "amethyst_simd_pwmulsub_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (truncate:SI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (truncate:SI
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2896,9 +2996,12 @@
 
 (define_insn "amethyst_simd_pwmulsubqu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (us_truncate:SI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (us_truncate:SI
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2906,9 +3009,12 @@
 
 (define_insn "amethyst_simd_pwmulsubqs_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (us_truncate:SI (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (ss_truncate:SI
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2916,9 +3022,14 @@
 
 (define_insn "amethyst_simd_pwmuluut_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (truncate:SI (lshiftrt:DI (mult:DI
-      (zero_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r"))) (const_int 32))))]
+     (truncate:SI
+       (lshiftrt:DI
+         (mult:DI
+           (zero_extend:DI
+             (match_operand:SI 1 "register_operand" "r"))
+           (zero_extend:DI
+             (match_operand:SI 2 "register_operand" "r")))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pwmuluut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2926,9 +3037,12 @@
 
 (define_insn "amethyst_simd_pwmuluub_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (truncate:SI (mult:DI
-      (zero_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (truncate:SI
+       (mult:DI
+         (zero_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2936,9 +3050,12 @@
 
 (define_insn "usmulsi3"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (us_truncate:SI (mult:DI
-      (zero_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (us_truncate:SI
+       (mult:DI
+         (zero_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2946,9 +3063,12 @@
 
 (define_insn "amethyst_simd_pwmuluubqs_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (us_truncate:SI (mult:DI
-      (zero_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r")))))]
+     (ss_truncate:SI
+       (mult:DI
+         (zero_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmuluubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2956,9 +3076,14 @@
 
 (define_insn "smulv8qi3_highpart"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (truncate:V8QI (lshiftrt:V8HI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (sign_extend:V8HI (match_operand:V8QI 2 "register_operand" "r"))) (const_int 8))))]
+     (truncate:V8QI
+       (lshiftrt:V8HI
+         (mult:V8HI
+           (sign_extend:V8HI
+             (match_operand:V8QI 1 "register_operand" "r"))
+           (sign_extend:V8HI
+             (match_operand:V8QI 2 "register_operand" "r")))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pdmulsst.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2966,18 +3091,22 @@
 
 (define_insn "mulv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (mult:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]  "TARGET_AMETHYST"
+     (mult:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
+  "TARGET_AMETHYST"
   "pdmulssb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdmulssbqu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (sign_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (us_truncate:V8QI
+       (mult:V8HI
+         (sign_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (sign_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulssbqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2985,9 +3114,12 @@
 
 (define_insn "ssmulv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (sign_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (ss_truncate:V8QI
+       (mult:V8HI
+         (sign_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (sign_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulssbqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -2995,9 +3127,14 @@
 
 (define_insn "amethyst_simd_pdmulsut_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (truncate:V8QI (lshiftrt:V8HI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r"))) (const_int 8))))]
+     (truncate:V8QI
+       (lshiftrt:V8HI
+         (mult:V8HI
+           (sign_extend:V8HI
+             (match_operand:V8QI 1 "register_operand" "r"))
+           (sign_extend:V8HI
+             (match_operand:V8QI 2 "register_operand" "r")))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pdmulsut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3005,9 +3142,12 @@
 
 (define_insn "amethyst_simd_pdmulsub_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (truncate:V8QI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (truncate:V8QI
+       (mult:V8HI
+         (sign_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (sign_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3015,9 +3155,12 @@
 
 (define_insn "amethyst_simd_pdmulsubqu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (us_truncate:V8QI
+       (mult:V8HI
+         (sign_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (sign_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3025,9 +3168,12 @@
 
 (define_insn "amethyst_simd_pdmulsubqs_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (ss_truncate:V8QI
+       (mult:V8HI
+         (sign_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (sign_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3035,9 +3181,14 @@
 
 (define_insn "umulv8qi3_highpart"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (truncate:V8QI (lshiftrt:V8HI (mult:V8HI
-      (zero_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r"))) (const_int 8))))]
+     (truncate:V8QI
+       (lshiftrt:V8HI
+         (mult:V8HI
+           (zero_extend:V8HI
+             (match_operand:V8QI 1 "register_operand" "r"))
+           (zero_extend:V8HI
+             (match_operand:V8QI 2 "register_operand" "r")))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pdmuluut.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3045,9 +3196,12 @@
 
 (define_insn "amethyst_simd_pdmuluub_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (truncate:V8QI (mult:V8HI
-      (zero_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (truncate:V8QI
+       (mult:V8HI
+         (zero_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (zero_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluub.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3055,9 +3209,12 @@
 
 (define_insn "usmulv8qi3"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (zero_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (us_truncate:V8QI
+       (mult:V8HI
+         (zero_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (zero_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3065,9 +3222,12 @@
 
 (define_insn "amethyst_simd_pdmuluubqs_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (zero_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (zero_extend:V8HI (match_operand:V8QI 2 "register_operand" "r")))))]
+     (ss_truncate:V8QI
+       (mult:V8HI
+         (zero_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (zero_extend:V8HI
+           (match_operand:V8QI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3075,9 +3235,14 @@
 
 (define_insn "smulv4hi3_highpart"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (truncate:V4HI (lshiftrt:V4SI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (sign_extend:V4SI (match_operand:V4HI 2 "register_operand" "r"))) (const_int 16))))]
+     (truncate:V4HI
+       (lshiftrt:V4SI
+         (mult:V4SI
+           (sign_extend:V4SI
+             (match_operand:V4HI 1 "register_operand" "r"))
+           (sign_extend:V4SI
+             (match_operand:V4HI 2 "register_operand" "r")))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pdmulsst.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3085,18 +3250,22 @@
 
 (define_insn "mulv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (mult:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]  "TARGET_AMETHYST"
+     (mult:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
+  "TARGET_AMETHYST"
   "pdmulssb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdmulssbqu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (sign_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (us_truncate:V4HI
+       (mult:V4SI
+         (sign_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (sign_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulssbqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3104,9 +3273,12 @@
 
 (define_insn "ssmulv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (sign_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (ss_truncate:V4HI
+       (mult:V4SI
+         (sign_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (sign_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulssbqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3114,9 +3286,14 @@
 
 (define_insn "amethyst_simd_pdmulsut_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (truncate:V4HI (lshiftrt:V4SI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r"))) (const_int 16))))]
+     (truncate:V4HI
+       (lshiftrt:V4SI
+         (mult:V4SI
+           (sign_extend:V4SI
+             (match_operand:V4HI 1 "register_operand" "r"))
+           (sign_extend:V4SI
+             (match_operand:V4HI 2 "register_operand" "r")))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pdmulsut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3124,9 +3301,12 @@
 
 (define_insn "amethyst_simd_pdmulsub_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (truncate:V4HI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (truncate:V4HI
+       (mult:V4SI
+         (sign_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (sign_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3134,9 +3314,12 @@
 
 (define_insn "amethyst_simd_pdmulsubqu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (us_truncate:V4HI
+       (mult:V4SI
+         (sign_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (sign_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3144,9 +3327,12 @@
 
 (define_insn "amethyst_simd_pdmulsubqs_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (ss_truncate:V4HI
+       (mult:V4SI
+         (sign_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (sign_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3154,9 +3340,14 @@
 
 (define_insn "umulv4hi3_highpart"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (truncate:V4HI (lshiftrt:V4SI (mult:V4SI
-      (zero_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r"))) (const_int 16))))]
+     (truncate:V4HI
+       (lshiftrt:V4SI
+         (mult:V4SI
+           (zero_extend:V4SI
+             (match_operand:V4HI 1 "register_operand" "r"))
+           (zero_extend:V4SI
+             (match_operand:V4HI 2 "register_operand" "r")))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pdmuluut.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3164,9 +3355,12 @@
 
 (define_insn "amethyst_simd_pdmuluub_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (truncate:V4HI (mult:V4SI
-      (zero_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (truncate:V4HI
+       (mult:V4SI
+         (zero_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (zero_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluub.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3174,9 +3368,12 @@
 
 (define_insn "usmulv4hi3"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (zero_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (us_truncate:V4HI
+       (mult:V4SI
+         (zero_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (zero_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3184,9 +3381,12 @@
 
 (define_insn "amethyst_simd_pdmuluubqs_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (zero_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (zero_extend:V4SI (match_operand:V4HI 2 "register_operand" "r")))))]
+     (ss_truncate:V4HI
+       (mult:V4SI
+         (zero_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (zero_extend:V4SI
+           (match_operand:V4HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3194,9 +3394,14 @@
 
 (define_insn "smulv2si3_highpart"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (truncate:V2SI (lshiftrt:V2DI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (sign_extend:V2DI (match_operand:V2SI 2 "register_operand" "r"))) (const_int 32))))]
+     (truncate:V2SI
+       (lshiftrt:V2DI
+         (mult:V2DI
+           (sign_extend:V2DI
+             (match_operand:V2SI 1 "register_operand" "r"))
+           (sign_extend:V2DI
+             (match_operand:V2SI 2 "register_operand" "r")))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pdmulsst.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3204,18 +3409,22 @@
 
 (define_insn "mulv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (mult:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]  "TARGET_AMETHYST"
+     (mult:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
+  "TARGET_AMETHYST"
   "pdmulssb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "DI")])
 
 (define_insn "amethyst_simd_pdmulssbqu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (sign_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (us_truncate:V2SI
+       (mult:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (sign_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulssbqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3223,9 +3432,12 @@
 
 (define_insn "ssmulv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (sign_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (ss_truncate:V2SI
+       (mult:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (sign_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulssbqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3233,9 +3445,14 @@
 
 (define_insn "amethyst_simd_pdmulsut_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (truncate:V2SI (lshiftrt:V2DI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r"))) (const_int 32))))]
+     (truncate:V2SI
+       (lshiftrt:V2DI
+         (mult:V2DI
+           (sign_extend:V2DI
+             (match_operand:V2SI 1 "register_operand" "r"))
+           (sign_extend:V2DI
+             (match_operand:V2SI 2 "register_operand" "r")))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pdmulsut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3243,9 +3460,12 @@
 
 (define_insn "amethyst_simd_pdmulsub_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (truncate:V2SI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (truncate:V2SI
+       (mult:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (sign_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3253,9 +3473,12 @@
 
 (define_insn "amethyst_simd_pdmulsubqu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (us_truncate:V2SI
+       (mult:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (sign_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3263,9 +3486,12 @@
 
 (define_insn "amethyst_simd_pdmulsubqs_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (ss_truncate:V2SI
+       (mult:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (sign_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmulsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3273,9 +3499,14 @@
 
 (define_insn "umulv2si3_highpart"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (truncate:V2SI (lshiftrt:V2DI (mult:V2DI
-      (zero_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r"))) (const_int 32))))]
+     (truncate:V2SI
+       (lshiftrt:V2DI
+         (mult:V2DI
+           (zero_extend:V2DI
+             (match_operand:V2SI 1 "register_operand" "r"))
+           (zero_extend:V2DI
+             (match_operand:V2SI 2 "register_operand" "r")))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pdmuluut.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3283,9 +3514,12 @@
 
 (define_insn "amethyst_simd_pdmuluub_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (truncate:V2SI (mult:V2DI
-      (zero_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (truncate:V2SI
+       (mult:V2DI
+         (zero_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (zero_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluub.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3293,9 +3527,12 @@
 
 (define_insn "usmulv2si3"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (zero_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (us_truncate:V2SI
+       (mult:V2DI
+         (zero_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (zero_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3303,9 +3540,12 @@
 
 (define_insn "amethyst_simd_pdmuluubqs_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (zero_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (zero_extend:V2DI (match_operand:V2SI 2 "register_operand" "r")))))]
+     (ss_truncate:V2SI
+       (mult:V2DI
+         (zero_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (zero_extend:V2DI
+           (match_operand:V2SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pdmuluubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3313,9 +3553,11 @@
 
 (define_insn "amethyst_simd_pwmulssw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (match_operand:V4QI 2 "register_operand" "r"))))]
+     (mult:V4HI
+       (sign_extend:V4HI
+         (match_operand:V4QI 1 "register_operand" "r"))
+       (sign_extend:V4HI
+         (match_operand:V4QI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulssw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3323,9 +3565,11 @@
 
 (define_insn "amethyst_simd_pwmulsuw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r"))))]
+     (mult:V4HI
+       (sign_extend:V4HI
+         (match_operand:V4QI 1 "register_operand" "r"))
+       (sign_extend:V4HI
+         (match_operand:V4QI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulsuw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3333,9 +3577,11 @@
 
 (define_insn "amethyst_simd_pwmuluuw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (mult:V4HI
-      (zero_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (zero_extend:V4HI (match_operand:V4QI 2 "register_operand" "r"))))]
+     (mult:V4HI
+       (zero_extend:V4HI
+         (match_operand:V4QI 1 "register_operand" "r"))
+       (zero_extend:V4HI
+         (match_operand:V4QI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmuluuw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3343,9 +3589,11 @@
 
 (define_insn "amethyst_simd_pwmulssw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (match_operand:V2HI 2 "register_operand" "r"))))]
+     (mult:V2SI
+       (sign_extend:V2SI
+         (match_operand:V2HI 1 "register_operand" "r"))
+       (sign_extend:V2SI
+         (match_operand:V2HI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulssw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3353,9 +3601,11 @@
 
 (define_insn "amethyst_simd_pwmulsuw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r"))))]
+     (mult:V2SI
+       (sign_extend:V2SI
+         (match_operand:V2HI 1 "register_operand" "r"))
+       (sign_extend:V2SI
+         (match_operand:V2HI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulsuw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3363,9 +3613,11 @@
 
 (define_insn "amethyst_simd_pwmuluuw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (mult:V2SI
-      (zero_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (zero_extend:V2SI (match_operand:V2HI 2 "register_operand" "r"))))]
+     (mult:V2SI
+       (zero_extend:V2SI
+         (match_operand:V2HI 1 "register_operand" "r"))
+       (zero_extend:V2SI
+         (match_operand:V2HI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmuluuw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3373,9 +3625,11 @@
 
 (define_insn "amethyst_simd_pwmulssw_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (sign_extend:DI (match_operand:SI 2 "register_operand" "r"))))]
+     (mult:DI
+       (sign_extend:DI
+         (match_operand:SI 1 "register_operand" "r"))
+       (sign_extend:DI
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulssw.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3383,9 +3637,11 @@
 
 (define_insn "amethyst_simd_pwmulsuw_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (mult:DI
-      (sign_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r"))))]
+     (mult:DI
+       (sign_extend:DI
+         (match_operand:SI 1 "register_operand" "r"))
+       (sign_extend:DI
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulsuw.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -3393,9 +3649,11 @@
 
 (define_insn "amethyst_simd_pwmuluuw_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (mult:DI
-      (zero_extend:DI (match_operand:SI 1 "register_operand" "r"))
-      (zero_extend:DI (match_operand:SI 2 "register_operand" "r"))))]
+     (mult:DI
+       (zero_extend:DI
+         (match_operand:SI 1 "register_operand" "r"))
+       (zero_extend:DI
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmuluuw.w\t%0,%1,%2"
   [(set_attr "type" "imul")
