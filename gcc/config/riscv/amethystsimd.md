@@ -1353,9 +1353,9 @@
 
 (define_insn "amethyst_simd_pwslt_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (lt:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]
+     (lt:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwslt.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1363,9 +1363,12 @@
 
 (define_insn "amethyst_simd_pwsltm_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (if_then_else:V4QI (lt:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V4QI
+       (lt:V4QI
+         (match_operand:V4QI 1 "register_operand" "r")
+         (match_operand:V4QI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pwsltm.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1373,9 +1376,9 @@
 
 (define_insn "amethyst_simd_pwsltu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (ltu:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]
+     (ltu:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsltu.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1383,9 +1386,12 @@
 
 (define_insn "amethyst_simd_pwsltum_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (if_then_else:V4QI (ltu:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V4QI
+       (ltu:V4QI
+         (match_operand:V4QI 1 "register_operand" "r")
+         (match_operand:V4QI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pwsltum.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1393,9 +1399,9 @@
 
 (define_insn "amethyst_simd_pwslt_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (lt:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]
+     (lt:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwslt.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1403,9 +1409,12 @@
 
 (define_insn "amethyst_simd_pwsltm_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (if_then_else:V2HI (lt:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V2HI
+       (lt:V2HI
+         (match_operand:V2HI 1 "register_operand" "r")
+         (match_operand:V2HI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pwsltm.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1413,9 +1422,9 @@
 
 (define_insn "amethyst_simd_pwsltu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (ltu:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]
+     (ltu:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsltu.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1423,9 +1432,12 @@
 
 (define_insn "amethyst_simd_pwsltum_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (if_then_else:V2HI (ltu:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V2HI
+       (ltu:V2HI
+         (match_operand:V2HI 1 "register_operand" "r")
+         (match_operand:V2HI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pwsltum.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1433,9 +1445,9 @@
 
 (define_insn "amethyst_simd_pwslt_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (lt:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (lt:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwslt.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1443,9 +1455,12 @@
 
 (define_insn "amethyst_simd_pwsltm_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (if_then_else:SI (lt:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:SI
+       (lt:SI
+         (match_operand:SI 1 "register_operand" "r")
+         (match_operand:SI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pwsltm.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1453,9 +1468,9 @@
 
 (define_insn "amethyst_simd_pwsltu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (ltu:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (ltu:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwsltu.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1463,9 +1478,12 @@
 
 (define_insn "amethyst_simd_pwsltum_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (if_then_else:SI (ltu:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:SI
+       (ltu:SI
+         (match_operand:SI 1 "register_operand" "r")
+         (match_operand:SI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pwsltum.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1473,9 +1491,9 @@
 
 (define_insn "amethyst_simd_pdslt_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (lt:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]
+     (lt:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdslt.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1483,9 +1501,12 @@
 
 (define_insn "amethyst_simd_pdsltm_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (if_then_else:V8QI (lt:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V8QI
+       (lt:V8QI
+         (match_operand:V8QI 1 "register_operand" "r")
+         (match_operand:V8QI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltm.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1493,9 +1514,9 @@
 
 (define_insn "amethyst_simd_pdsltu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (ltu:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]
+     (ltu:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsltu.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1503,9 +1524,12 @@
 
 (define_insn "amethyst_simd_pdsltum_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (if_then_else:V8QI (ltu:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V8QI
+       (ltu:V8QI
+         (match_operand:V8QI 1 "register_operand" "r")
+         (match_operand:V8QI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltum.b\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1513,9 +1537,9 @@
 
 (define_insn "amethyst_simd_pdslt_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (lt:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]
+     (lt:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdslt.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1523,9 +1547,12 @@
 
 (define_insn "amethyst_simd_pdsltm_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (if_then_else:V4HI (lt:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V4HI
+       (lt:V4HI
+         (match_operand:V4HI 1 "register_operand" "r")
+         (match_operand:V4HI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltm.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1533,9 +1560,9 @@
 
 (define_insn "amethyst_simd_pdsltu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (ltu:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]
+     (ltu:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsltu.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1543,9 +1570,12 @@
 
 (define_insn "amethyst_simd_pdsltum_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (if_then_else:V4HI (ltu:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V4HI
+       (ltu:V4HI
+         (match_operand:V4HI 1 "register_operand" "r")
+         (match_operand:V4HI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltum.h\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1553,9 +1583,9 @@
 
 (define_insn "amethyst_simd_pdslt_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (lt:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]
+     (lt:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdslt.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1563,9 +1593,12 @@
 
 (define_insn "amethyst_simd_pdsltm_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (if_then_else:V2SI (lt:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V2SI
+       (lt:V2SI
+         (match_operand:V2SI 1 "register_operand" "r")
+         (match_operand:V2SI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltm.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1573,9 +1606,9 @@
 
 (define_insn "amethyst_simd_pdsltu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (ltu:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]
+     (ltu:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsltu.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1583,9 +1616,12 @@
 
 (define_insn "amethyst_simd_pdsltum_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (if_then_else:V2SI (ltu:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:V2SI
+       (ltu:V2SI
+         (match_operand:V2SI 1 "register_operand" "r")
+         (match_operand:V2SI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltum.w\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1593,9 +1629,9 @@
 
 (define_insn "amethyst_simd_pdslt_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (lt:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (lt:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdslt.d\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1603,9 +1639,12 @@
 
 (define_insn "amethyst_simd_pdsltm_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (if_then_else:DI (lt:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:DI
+       (lt:DI
+         (match_operand:DI 1 "register_operand" "r")
+         (match_operand:DI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltm.d\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1613,9 +1652,9 @@
 
 (define_insn "amethyst_simd_pdsltu_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (ltu:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (ltu:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdsltu.d\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1623,9 +1662,12 @@
 
 (define_insn "amethyst_simd_pdsltum_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (if_then_else:DI (ltu:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")) (const_int -1) (const_int 0)))]
+     (if_then_else:DI
+       (ltu:DI
+         (match_operand:DI 1 "register_operand" "r")
+         (match_operand:DI 2 "register_operand" "r"))
+       (const_int -1)
+       (const_int 0)))]
   "TARGET_AMETHYST"
   "pdsltum.d\t%0,%1,%2"
   [(set_attr "type" "slt")
@@ -1633,9 +1675,9 @@
 
 (define_insn "amethyst_simd_pwmin_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (smin:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]
+     (smin:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmin.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1643,9 +1685,9 @@
 
 (define_insn "amethyst_simd_pwmax_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (smax:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]
+     (smax:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmax.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1653,9 +1695,9 @@
 
 (define_insn "amethyst_simd_pwminu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (umin:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]
+     (umin:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwminu.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1663,9 +1705,9 @@
 
 (define_insn "amethyst_simd_pwmaxu_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (umax:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (match_operand:V4QI 2 "register_operand" "r")))]
+     (umax:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (match_operand:V4QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmaxu.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1673,9 +1715,9 @@
 
 (define_insn "amethyst_simd_pwmin_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (smin:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]
+     (smin:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmin.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1683,9 +1725,9 @@
 
 (define_insn "amethyst_simd_pwmax_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (smax:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]
+     (smax:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmax.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1693,9 +1735,9 @@
 
 (define_insn "amethyst_simd_pwminu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (umin:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]
+     (umin:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwminu.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1703,9 +1745,9 @@
 
 (define_insn "amethyst_simd_pwmaxu_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (umax:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (match_operand:V2HI 2 "register_operand" "r")))]
+     (umax:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (match_operand:V2HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmaxu.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1713,9 +1755,9 @@
 
 (define_insn "amethyst_simd_pwmin_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (smin:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (smin:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmin.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1723,9 +1765,9 @@
 
 (define_insn "amethyst_simd_pwmax_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (smax:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (smax:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmax.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1733,9 +1775,9 @@
 
 (define_insn "amethyst_simd_pwminu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (umin:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (umin:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwminu.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1743,9 +1785,9 @@
 
 (define_insn "amethyst_simd_pwmaxu_w"
   [(set (match_operand:SI 0 "register_operand" "=r")
-    (umax:SI
-      (match_operand:SI 1 "register_operand" "r")
-      (match_operand:SI 2 "register_operand" "r")))]
+     (umax:SI
+       (match_operand:SI 1 "register_operand" "r")
+       (match_operand:SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pwmaxu.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1753,9 +1795,9 @@
 
 (define_insn "amethyst_simd_pdmin_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (smin:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]
+     (smin:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmin.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1763,9 +1805,9 @@
 
 (define_insn "amethyst_simd_pdmax_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (smax:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]
+     (smax:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmax.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1773,9 +1815,9 @@
 
 (define_insn "amethyst_simd_pdminu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (umin:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]
+     (umin:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdminu.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1783,9 +1825,9 @@
 
 (define_insn "amethyst_simd_pdmaxu_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (umax:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (match_operand:V8QI 2 "register_operand" "r")))]
+     (umax:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (match_operand:V8QI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmaxu.b\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1793,9 +1835,9 @@
 
 (define_insn "amethyst_simd_pdmin_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (smin:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]
+     (smin:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmin.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1803,9 +1845,9 @@
 
 (define_insn "amethyst_simd_pdmax_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (smax:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]
+     (smax:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmax.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1813,9 +1855,9 @@
 
 (define_insn "amethyst_simd_pdminu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (umin:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]
+     (umin:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdminu.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1823,9 +1865,9 @@
 
 (define_insn "amethyst_simd_pdmaxu_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (umax:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (match_operand:V4HI 2 "register_operand" "r")))]
+     (umax:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (match_operand:V4HI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmaxu.h\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1833,9 +1875,9 @@
 
 (define_insn "amethyst_simd_pdmin_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (smin:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]
+     (smin:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmin.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1843,9 +1885,9 @@
 
 (define_insn "amethyst_simd_pdmax_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (smax:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]
+     (smax:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmax.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1853,9 +1895,9 @@
 
 (define_insn "amethyst_simd_pdminu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (umin:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]
+     (umin:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdminu.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1863,9 +1905,9 @@
 
 (define_insn "amethyst_simd_pdmaxu_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (umax:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (match_operand:V2SI 2 "register_operand" "r")))]
+     (umax:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (match_operand:V2SI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmaxu.w\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1873,9 +1915,9 @@
 
 (define_insn "amethyst_simd_pdmin_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (smin:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (smin:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmin.d\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1883,9 +1925,9 @@
 
 (define_insn "amethyst_simd_pdmax_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (smax:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (smax:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmax.d\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1893,9 +1935,9 @@
 
 (define_insn "amethyst_simd_pdminu_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (umin:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (umin:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdminu.d\t%0,%1,%2"
   [(set_attr "type" "arith")
@@ -1903,9 +1945,9 @@
 
 (define_insn "amethyst_simd_pdmaxu_d"
   [(set (match_operand:DI 0 "register_operand" "=r")
-    (umax:DI
-      (match_operand:DI 1 "register_operand" "r")
-      (match_operand:DI 2 "register_operand" "r")))]
+     (umax:DI
+       (match_operand:DI 1 "register_operand" "r")
+       (match_operand:DI 2 "register_operand" "r")))]
   "TARGET_AMETHYST"
   "pdmaxu.d\t%0,%1,%2"
   [(set_attr "type" "arith")
