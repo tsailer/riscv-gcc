@@ -4310,1229 +4310,1229 @@
 
 (define_insn "amethyst_simd_pwmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
-     (match_operand:HI 3 "register_operand" "r")
      (plus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
-     (match_operand:HI 3 "register_operand" "r")
      (plus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (plus:SI
-       (zero_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
+     (us_truncate:HI
        (plus:SI
+         (zero_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pwmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (plus:SI
-       (sign_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
+     (ss_truncate:HI
        (plus:SI
+         (sign_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pwmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
      (plus:HI
-       (mult:HI
-         (zero_extend:HI
-           (vec_select:QI
-             (match_operand:V4QI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:HI
-           (vec_select:QI
-             (match_operand:V4QI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:HI
-         (zero_extend:HI
-           (vec_select:QI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:HI
-           (vec_select:QI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))
-     (plus:HI
-       (mult:HI
-         (zero_extend:HI
-           (vec_select:QI
-             (match_dup 1)
-             (parallel [(const_int 2)])))
-         (zero_extend:HI
-           (vec_select:QI
-             (match_dup 2)
-             (parallel [(const_int 2)]))))
-       (mult:HI
-         (zero_extend:HI
-           (vec_select:QI
-             (match_dup 1)
-             (parallel [(const_int 3)])))
-         (zero_extend:HI
-           (vec_select:QI
-             (match_dup 2)
-             (parallel [(const_int 3)])))))))]
+       (plus:HI
+         (mult:HI
+           (zero_extend:HI
+             (vec_select:QI
+               (match_operand:V4QI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:HI
+             (vec_select:QI
+               (match_operand:V4QI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:HI
+           (zero_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:HI
+         (mult:HI
+           (zero_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (zero_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 2)]))))
+         (mult:HI
+           (zero_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 3)])))
+           (zero_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 3)])))))))]
   "TARGET_AMETHYST"
   "pwzmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
      (plus:HI
-       (mult:HI
-         (sign_extend:HI
-           (vec_select:QI
-             (match_operand:V4QI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:HI
-           (vec_select:QI
-             (match_operand:V4QI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:HI
-         (sign_extend:HI
-           (vec_select:QI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:HI
-           (vec_select:QI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))
-     (plus:HI
-       (mult:HI
-         (sign_extend:HI
-           (vec_select:QI
-             (match_dup 1)
-             (parallel [(const_int 2)])))
-         (sign_extend:HI
-           (vec_select:QI
-             (match_dup 2)
-             (parallel [(const_int 2)]))))
-       (mult:HI
-         (sign_extend:HI
-           (vec_select:QI
-             (match_dup 1)
-             (parallel [(const_int 3)])))
-         (sign_extend:HI
-           (vec_select:QI
-             (match_dup 2)
-             (parallel [(const_int 3)])))))))]
+       (plus:HI
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_operand:V4QI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_operand:V4QI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:HI
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 2)]))))
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 3)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 3)])))))))]
   "TARGET_AMETHYST"
   "pwzmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (plus:SI
+     (us_truncate:HI
        (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:SI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:SI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:SI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:SI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwzmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (plus:SI
+     (ss_truncate:HI
        (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:SI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:SI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:SI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:SI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwzmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (minus:HI
-     (match_operand:HI 3 "register_operand" "r")
-     (plus:HI
+     (minus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (minus:HI
-     (match_operand:HI 3 "register_operand" "r")
-     (plus:HI
+     (minus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (minus:SI
-       (zero_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
-       (plus:SI
+     (us_truncate:HI
+       (minus:SI
+         (zero_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pwmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (minus:SI
-       (sign_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
-       (plus:SI
+     (ss_truncate:HI
+       (minus:SI
+         (sign_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pwmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (neg:HI
-     (plus:HI
+     (neg:HI
        (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwzmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (neg:HI
-     (plus:HI
+     (neg:HI
        (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V4QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pwzmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (neg:SI
-       (plus:SI
+     (us_truncate:HI
+       (neg:SI
          (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pwzmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (neg:SI
-       (plus:SI
+     (ss_truncate:HI
+       (neg:SI
          (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V4QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pwzmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
-     (match_operand:SI 3 "register_operand" "r")
      (plus:SI
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+       (match_operand:SI 3 "register_operand" "r")
+       (plus:SI
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
-     (match_operand:SI 3 "register_operand" "r")
      (plus:SI
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+       (match_operand:SI 3 "register_operand" "r")
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (plus:DI
-       (zero_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
+     (us_truncate:SI
        (plus:DI
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+         (zero_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
+         (plus:DI
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pwmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (plus:DI
-       (sign_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
+     (ss_truncate:SI
        (plus:DI
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+         (sign_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pwmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
-     (mult:SI
-       (zero_extend:SI
-         (vec_select:HI
-           (match_operand:V2HI 1 "register_operand" "r")
-           (parallel [(const_int 0)])))
-       (zero_extend:SI
-         (vec_select:HI
-           (match_operand:V2HI 2 "register_operand" "r")
-           (parallel [(const_int 0)]))))
-     (mult:SI
-       (zero_extend:SI
-         (vec_select:HI
-           (match_dup 1)
-           (parallel [(const_int 1)])))
-       (zero_extend:SI
-         (vec_select:HI
-           (match_dup 2)
-           (parallel [(const_int 1)]))))))]
+     (plus:SI
+       (mult:SI
+         (zero_extend:SI
+           (vec_select:HI
+             (match_operand:V2HI 1 "register_operand" "r")
+             (parallel [(const_int 0)])))
+         (zero_extend:SI
+           (vec_select:HI
+             (match_operand:V2HI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))))
+       (mult:SI
+         (zero_extend:SI
+           (vec_select:HI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (zero_extend:SI
+           (vec_select:HI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))))]
   "TARGET_AMETHYST"
   "pwzmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
-     (mult:SI
-       (sign_extend:SI
-         (vec_select:HI
-           (match_operand:V2HI 1 "register_operand" "r")
-           (parallel [(const_int 0)])))
-       (sign_extend:SI
-         (vec_select:HI
-           (match_operand:V2HI 2 "register_operand" "r")
-           (parallel [(const_int 0)]))))
-     (mult:SI
-       (sign_extend:SI
-         (vec_select:HI
-           (match_dup 1)
-           (parallel [(const_int 1)])))
-       (sign_extend:SI
-         (vec_select:HI
-           (match_dup 2)
-           (parallel [(const_int 1)]))))))]
+     (plus:SI
+       (mult:SI
+         (sign_extend:SI
+           (vec_select:HI
+             (match_operand:V2HI 1 "register_operand" "r")
+             (parallel [(const_int 0)])))
+         (sign_extend:SI
+           (vec_select:HI
+             (match_operand:V2HI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))))
+       (mult:SI
+         (sign_extend:SI
+           (vec_select:HI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (sign_extend:SI
+           (vec_select:HI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))))]
   "TARGET_AMETHYST"
   "pwzmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (plus:DI
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:DI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:DI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (us_truncate:SI
+       (plus:DI
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:DI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:DI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwzmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (plus:DI
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:DI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:DI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (ss_truncate:SI
+       (plus:DI
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:DI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:DI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwzmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (minus:SI
-     (match_operand:SI 3 "register_operand" "r")
-     (plus:SI
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (minus:SI
+       (match_operand:SI 3 "register_operand" "r")
+       (plus:SI
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (minus:SI
-     (match_operand:SI 3 "register_operand" "r")
-     (plus:SI
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (minus:SI
+       (match_operand:SI 3 "register_operand" "r")
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (minus:DI
-       (zero_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
-       (plus:DI
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (us_truncate:SI
+       (minus:DI
+         (zero_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
+         (plus:DI
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pwmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (minus:DI
-       (sign_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
-       (plus:DI
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (ss_truncate:SI
+       (minus:DI
+         (sign_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pwmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (neg:SI
-     (plus:SI
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (neg:SI
+       (plus:SI
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwzmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (neg:SI
-     (plus:SI
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V2HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (neg:SI
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pwzmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (neg:DI
-       (plus:DI
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (us_truncate:SI
+       (neg:DI
+         (plus:DI
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pwzmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwzmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (neg:DI
-       (plus:DI
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V2HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (ss_truncate:SI
+       (neg:DI
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pwzmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pwmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (plus:DI
-     (match_operand:DI 3 "register_operand" "r")
-     (mult:DI
-       (zero_extend:DI
-         (match_operand:SI 1 "register_operand" "r"))
-       (zero_extend:DI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (plus:DI
+       (match_operand:DI 3 "register_operand" "r")
+       (mult:DI
+         (zero_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5540,13 +5540,13 @@
 
 (define_insn "amethyst_simd_pwmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (plus:DI
-     (match_operand:DI 3 "register_operand" "r")
-     (mult:DI
-       (sign_extend:DI
-         (match_operand:SI 1 "register_operand" "r"))
-       (sign_extend:DI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (plus:DI
+       (match_operand:DI 3 "register_operand" "r")
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5554,15 +5554,15 @@
 
 (define_insn "amethyst_simd_pwmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (plus:TI
-       (zero_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
-       (mult:TI
+     (us_truncate:DI
+       (plus:TI
          (zero_extend:TI
-           (match_operand:SI 1 "register_operand" "r"))
-         (zero_extend:TI
-           (match_operand:SI 2 "register_operand" "r"))))))]
+           (match_operand:DI 3 "register_operand" "r"))
+         (mult:TI
+           (zero_extend:TI
+             (match_operand:SI 1 "register_operand" "r"))
+           (zero_extend:TI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5570,15 +5570,15 @@
 
 (define_insn "amethyst_simd_pwmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (plus:TI
-       (sign_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
-       (mult:TI
+     (ss_truncate:DI
+       (plus:TI
          (sign_extend:TI
-           (match_operand:SI 1 "register_operand" "r"))
-         (sign_extend:TI
-           (match_operand:SI 2 "register_operand" "r"))))))]
+           (match_operand:DI 3 "register_operand" "r"))
+         (mult:TI
+           (sign_extend:TI
+             (match_operand:SI 1 "register_operand" "r"))
+           (sign_extend:TI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5586,11 +5586,11 @@
 
 (define_insn "amethyst_simd_pwzmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (mult:DI
-     (zero_extend:DI
-       (match_operand:SI 1 "register_operand" "r"))
-     (zero_extend:DI
-       (match_operand:SI 2 "register_operand" "r"))))]
+     (mult:DI
+       (zero_extend:DI
+         (match_operand:SI 1 "register_operand" "r"))
+       (zero_extend:DI
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwzmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5598,11 +5598,11 @@
 
 (define_insn "amethyst_simd_pwzmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (mult:DI
-     (sign_extend:DI
-       (match_operand:SI 1 "register_operand" "r"))
-     (sign_extend:DI
-       (match_operand:SI 2 "register_operand" "r"))))]
+     (mult:DI
+       (sign_extend:DI
+         (match_operand:SI 1 "register_operand" "r"))
+       (sign_extend:DI
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwzmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5610,12 +5610,12 @@
 
 (define_insn "amethyst_simd_pwzmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (mult:TI
-       (zero_extend:TI
-         (match_operand:SI 1 "register_operand" "r"))
-       (zero_extend:TI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (us_truncate:DI
+       (mult:TI
+         (zero_extend:TI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:TI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwzmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5623,12 +5623,12 @@
 
 (define_insn "amethyst_simd_pwzmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (mult:TI
-       (sign_extend:TI
-         (match_operand:SI 1 "register_operand" "r"))
-       (sign_extend:TI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (ss_truncate:DI
+       (mult:TI
+         (sign_extend:TI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:TI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwzmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5636,13 +5636,13 @@
 
 (define_insn "amethyst_simd_pwmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (minus:DI
-     (match_operand:DI 3 "register_operand" "r")
-     (mult:DI
-       (zero_extend:DI
-         (match_operand:SI 1 "register_operand" "r"))
-       (zero_extend:DI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (minus:DI
+       (match_operand:DI 3 "register_operand" "r")
+       (mult:DI
+         (zero_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5650,13 +5650,13 @@
 
 (define_insn "amethyst_simd_pwmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (minus:DI
-     (match_operand:DI 3 "register_operand" "r")
-     (mult:DI
-       (sign_extend:DI
-         (match_operand:SI 1 "register_operand" "r"))
-       (sign_extend:DI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (minus:DI
+       (match_operand:DI 3 "register_operand" "r")
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5664,15 +5664,15 @@
 
 (define_insn "amethyst_simd_pwmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (minus:TI
-       (zero_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
-       (mult:TI
+     (us_truncate:DI
+       (minus:TI
          (zero_extend:TI
-           (match_operand:SI 1 "register_operand" "r"))
-         (zero_extend:TI
-           (match_operand:SI 2 "register_operand" "r"))))))]
+           (match_operand:DI 3 "register_operand" "r"))
+         (mult:TI
+           (zero_extend:TI
+             (match_operand:SI 1 "register_operand" "r"))
+           (zero_extend:TI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5680,15 +5680,15 @@
 
 (define_insn "amethyst_simd_pwmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (minus:TI
-       (sign_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
-       (mult:TI
+     (ss_truncate:DI
+       (minus:TI
          (sign_extend:TI
-           (match_operand:SI 1 "register_operand" "r"))
-         (sign_extend:TI
-           (match_operand:SI 2 "register_operand" "r"))))))]
+           (match_operand:DI 3 "register_operand" "r"))
+         (mult:TI
+           (sign_extend:TI
+             (match_operand:SI 1 "register_operand" "r"))
+           (sign_extend:TI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5696,12 +5696,12 @@
 
 (define_insn "amethyst_simd_pwzmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (neg:DI
-     (mult:DI
-       (zero_extend:DI
-         (match_operand:SI 1 "register_operand" "r"))
-       (zero_extend:DI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (neg:DI
+       (mult:DI
+         (zero_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (zero_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwzmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5709,12 +5709,12 @@
 
 (define_insn "amethyst_simd_pwzmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (neg:DI
-     (mult:DI
-       (sign_extend:DI
-         (match_operand:SI 1 "register_operand" "r"))
-       (sign_extend:DI
-         (match_operand:SI 2 "register_operand" "r")))))]
+     (neg:DI
+       (mult:DI
+         (sign_extend:DI
+           (match_operand:SI 1 "register_operand" "r"))
+         (sign_extend:DI
+           (match_operand:SI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwzmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5722,13 +5722,13 @@
 
 (define_insn "amethyst_simd_pwzmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (neg:TI
-       (mult:TI
-         (zero_extend:TI
-           (match_operand:SI 1 "register_operand" "r"))
-         (zero_extend:TI
-           (match_operand:SI 2 "register_operand" "r"))))))]
+     (us_truncate:DI
+       (neg:TI
+         (mult:TI
+           (zero_extend:TI
+             (match_operand:SI 1 "register_operand" "r"))
+           (zero_extend:TI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwzmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5736,13 +5736,13 @@
 
 (define_insn "amethyst_simd_pwzmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (neg:TI
-       (mult:TI
-         (sign_extend:TI
-           (match_operand:SI 1 "register_operand" "r"))
-         (sign_extend:TI
-           (match_operand:SI 2 "register_operand" "r"))))))]
+     (ss_truncate:DI
+       (neg:TI
+         (mult:TI
+           (sign_extend:TI
+             (match_operand:SI 1 "register_operand" "r"))
+           (sign_extend:TI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwzmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -5750,2203 +5750,2203 @@
 
 (define_insn "amethyst_simd_pdmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
-     (match_operand:HI 3 "register_operand" "r")
      (plus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
          (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:HI
-         (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
-     (match_operand:HI 3 "register_operand" "r")
      (plus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
          (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:HI
-         (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (plus:SI
-       (zero_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
+     (us_truncate:HI
        (plus:SI
+         (zero_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
            (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 1 "register_operand" "r")
-                   (parallel [(const_int 0)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 2 "register_operand" "r")
-                   (parallel [(const_int 0)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 1)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
            (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 2)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 2)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 3)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 3)]))))))
-         (plus:SI
-           (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 4)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 4)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 5)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 5)])))))
-           (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 6)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 6)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 7)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 7)]))))))))))]
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))))))))]
   "TARGET_AMETHYST"
   "pdmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (plus:SI
-       (sign_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
+     (ss_truncate:HI
        (plus:SI
+         (sign_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
            (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 1 "register_operand" "r")
-                   (parallel [(const_int 0)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 2 "register_operand" "r")
-                   (parallel [(const_int 0)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 1)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
            (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 2)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 2)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 3)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 3)]))))))
-         (plus:SI
-           (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 4)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 4)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 5)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 5)])))))
-           (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 6)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 6)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 7)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 7)]))))))))))]
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))))))))]
   "TARGET_AMETHYST"
   "pdmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
      (plus:HI
        (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V8QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_operand:V8QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V8QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_operand:V8QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))
        (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))
-     (plus:HI
-       (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 4)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 4)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 5)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 5)])))))
-       (plus:HI
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 6)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 6)]))))
-         (mult:HI
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 7)])))
-           (zero_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 7)]))))))))]
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 4)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 4)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 5)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 5)])))))
+         (plus:HI
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 6)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 6)]))))
+           (mult:HI
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 7)])))
+             (zero_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 7)]))))))))]
   "TARGET_AMETHYST"
   "pdzmaccu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (plus:HI
      (plus:HI
        (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V8QI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_operand:V8QI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V8QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V8QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))
        (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))
-     (plus:HI
-       (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 4)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 4)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 5)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 5)])))))
-       (plus:HI
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 6)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 6)]))))
-         (mult:HI
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 1)
-               (parallel [(const_int 7)])))
-           (sign_extend:HI
-             (vec_select:QI
-               (match_dup 2)
-               (parallel [(const_int 7)]))))))))]
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 4)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 4)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 5)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 5)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 6)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 6)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 7)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 7)]))))))))]
   "TARGET_AMETHYST"
   "pdzmaccs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (plus:SI
+     (us_truncate:HI
        (plus:SI
          (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:SI
-         (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:SI
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:SI
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (zero_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:SI
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:SI
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (zero_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdzmaccqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (plus:SI
+     (ss_truncate:HI
        (plus:SI
          (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:SI
-         (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:SI
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:SI
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (sign_extend:SI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdzmaccqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (minus:HI
-     (match_operand:HI 3 "register_operand" "r")
-     (plus:HI
+     (minus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
          (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:HI
-         (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (minus:HI
-     (match_operand:HI 3 "register_operand" "r")
-     (plus:HI
+     (minus:HI
+       (match_operand:HI 3 "register_operand" "r")
        (plus:HI
          (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:HI
-         (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (minus:SI
-       (zero_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
-       (plus:SI
+     (us_truncate:HI
+       (minus:SI
+         (zero_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
            (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 1 "register_operand" "r")
-                   (parallel [(const_int 0)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 2 "register_operand" "r")
-                   (parallel [(const_int 0)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 1)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
            (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 2)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 2)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 3)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 3)]))))))
-         (plus:SI
-           (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 4)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 4)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 5)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 5)])))))
-           (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 6)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 6)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 7)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 7)]))))))))))]
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))))))))]
   "TARGET_AMETHYST"
   "pdmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (minus:SI
-       (sign_extend:SI
-         (match_operand:HI 3 "register_operand" "r"))
-       (plus:SI
+     (ss_truncate:HI
+       (minus:SI
+         (sign_extend:SI
+           (match_operand:HI 3 "register_operand" "r"))
          (plus:SI
            (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 1 "register_operand" "r")
-                   (parallel [(const_int 0)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 2 "register_operand" "r")
-                   (parallel [(const_int 0)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 1)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
            (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 2)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 2)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 3)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 3)]))))))
-         (plus:SI
-           (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 4)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 4)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 5)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 5)])))))
-           (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 6)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 6)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 7)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 7)]))))))))))]
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))))))))]
   "TARGET_AMETHYST"
   "pdmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (neg:HI
-     (plus:HI
+     (neg:HI
        (plus:HI
          (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:HI
-         (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:HI
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:HI
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (zero_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:HI
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (zero_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdzmsubu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (neg:HI
-     (plus:HI
+     (neg:HI
        (plus:HI
          (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_operand:V8QI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
          (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 3)]))))))
-       (plus:HI
-         (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 4)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 4)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 5)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 5)])))))
-         (plus:HI
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 6)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 6)]))))
-           (mult:HI
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 1)
-                 (parallel [(const_int 7)])))
-             (sign_extend:HI
-               (vec_select:QI
-                 (match_dup 2)
-                 (parallel [(const_int 7)])))))))))]
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))))]
   "TARGET_AMETHYST"
   "pdzmsubs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubqu_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (us_truncate:HI
-     (neg:SI
-       (plus:SI
+     (us_truncate:HI
+       (neg:SI
          (plus:SI
            (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 1 "register_operand" "r")
-                   (parallel [(const_int 0)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 2 "register_operand" "r")
-                   (parallel [(const_int 0)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 1)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
            (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 2)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 2)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 3)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 3)]))))))
-         (plus:SI
-           (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 4)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 4)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 5)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 5)])))))
-           (plus:SI
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 6)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 6)]))))
-             (mult:SI
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 7)])))
-               (zero_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 7)]))))))))))]
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (plus:SI
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (zero_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))))))))]
   "TARGET_AMETHYST"
   "pdzmsubqu.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubqs_b"
   [(set (match_operand:HI 0 "register_operand" "=r")
-   (ss_truncate:HI
-     (neg:SI
-       (plus:SI
+     (ss_truncate:HI
+       (neg:SI
          (plus:SI
            (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 1 "register_operand" "r")
-                   (parallel [(const_int 0)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_operand:V8QI 2 "register_operand" "r")
-                   (parallel [(const_int 0)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 1)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
            (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 2)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 2)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 3)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 3)]))))))
-         (plus:SI
-           (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 4)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 4)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 5)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 5)])))))
-           (plus:SI
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 6)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 6)]))))
-             (mult:SI
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 1)
-                   (parallel [(const_int 7)])))
-               (sign_extend:SI
-                 (vec_select:QI
-                   (match_dup 2)
-                   (parallel [(const_int 7)]))))))))))]
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))))))))]
   "TARGET_AMETHYST"
   "pdzmsubqs.b\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
-     (match_operand:SI 3 "register_operand" "r")
      (plus:SI
+       (match_operand:SI 3 "register_operand" "r")
        (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
-     (match_operand:SI 3 "register_operand" "r")
      (plus:SI
+       (match_operand:SI 3 "register_operand" "r")
        (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (plus:DI
-       (zero_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
+     (us_truncate:SI
        (plus:DI
+         (zero_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
          (plus:DI
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:DI
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:DI
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pdmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (plus:DI
-       (sign_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
+     (ss_truncate:SI
        (plus:DI
+         (sign_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
          (plus:DI
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:DI
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pdmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
      (plus:SI
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V4HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_operand:V4HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))
-     (plus:SI
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 2)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 2)]))))
-       (mult:SI
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 3)])))
-         (zero_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 3)])))))))]
+       (plus:SI
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V4HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_operand:V4HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:SI
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 2)]))))
+         (mult:SI
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 3)])))
+           (zero_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 3)])))))))]
   "TARGET_AMETHYST"
   "pdzmaccu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (plus:SI
      (plus:SI
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V4HI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_operand:V4HI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))
-     (plus:SI
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 2)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 2)]))))
-       (mult:SI
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 1)
-             (parallel [(const_int 3)])))
-         (sign_extend:SI
-           (vec_select:HI
-             (match_dup 2)
-             (parallel [(const_int 3)])))))))]
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V4HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V4HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 2)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 3)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 3)])))))))]
   "TARGET_AMETHYST"
   "pdzmaccs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (plus:DI
+     (us_truncate:SI
        (plus:DI
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:DI
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:DI
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:DI
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:DI
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:DI
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdzmaccqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmaccqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (plus:DI
+     (ss_truncate:SI
        (plus:DI
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:DI
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:DI
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:DI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdzmaccqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (minus:SI
-     (match_operand:SI 3 "register_operand" "r")
-     (plus:SI
+     (minus:SI
+       (match_operand:SI 3 "register_operand" "r")
        (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (minus:SI
-     (match_operand:SI 3 "register_operand" "r")
-     (plus:SI
+     (minus:SI
+       (match_operand:SI 3 "register_operand" "r")
        (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (minus:DI
-       (zero_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
-       (plus:DI
+     (us_truncate:SI
+       (minus:DI
+         (zero_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
          (plus:DI
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:DI
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:DI
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pdmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (minus:DI
-       (sign_extend:DI
-         (match_operand:SI 3 "register_operand" "r"))
-       (plus:DI
+     (ss_truncate:SI
+       (minus:DI
+         (sign_extend:DI
+           (match_operand:SI 3 "register_operand" "r"))
          (plus:DI
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:DI
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pdmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (neg:SI
-     (plus:SI
+     (neg:SI
        (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (zero_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (zero_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdzmsubu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (neg:SI
-     (plus:SI
+     (neg:SI
        (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_operand:V4HI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 1)])))))
-       (plus:SI
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 2)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 2)]))))
-         (mult:SI
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 1)
-               (parallel [(const_int 3)])))
-           (sign_extend:SI
-             (vec_select:HI
-               (match_dup 2)
-               (parallel [(const_int 3)]))))))))]
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
   "TARGET_AMETHYST"
   "pdzmsubs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubqu_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (us_truncate:SI
-     (neg:DI
-       (plus:DI
+     (us_truncate:SI
+       (neg:DI
          (plus:DI
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:DI
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:DI
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (zero_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:DI
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (zero_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pdzmsubqu.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdzmsubqs_h"
   [(set (match_operand:SI 0 "register_operand" "=r")
-   (ss_truncate:SI
-     (neg:DI
-       (plus:DI
+     (ss_truncate:SI
+       (neg:DI
          (plus:DI
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 1 "register_operand" "r")
-                 (parallel [(const_int 0)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_operand:V4HI 2 "register_operand" "r")
-                 (parallel [(const_int 0)]))))
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 1)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 1)])))))
-         (plus:DI
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 2)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 2)]))))
-           (mult:DI
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 1)
-                 (parallel [(const_int 3)])))
-             (sign_extend:DI
-               (vec_select:HI
-                 (match_dup 2)
-                 (parallel [(const_int 3)])))))))))]
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
   "TARGET_AMETHYST"
   "pdzmsubqs.h\t%0,%1,%2"
   [(set_attr "type" "imul")
-   (set_attr "mode" "DI")])
+   (set_attr "mode" "SI")])
 
 (define_insn "amethyst_simd_pdmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (plus:DI
-     (match_operand:DI 3 "register_operand" "r")
      (plus:DI
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:DI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+       (match_operand:DI 3 "register_operand" "r")
+       (plus:DI
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:DI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -7954,27 +7954,27 @@
 
 (define_insn "amethyst_simd_pdmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (plus:DI
-     (match_operand:DI 3 "register_operand" "r")
      (plus:DI
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:DI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+       (match_operand:DI 3 "register_operand" "r")
+       (plus:DI
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:DI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -7982,29 +7982,29 @@
 
 (define_insn "amethyst_simd_pdmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (plus:TI
-       (zero_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
+     (us_truncate:DI
        (plus:TI
-         (mult:TI
-           (zero_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:TI
-           (zero_extend:TI
-             (vec_select:SI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:TI
-             (vec_select:SI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+         (zero_extend:TI
+           (match_operand:DI 3 "register_operand" "r"))
+         (plus:TI
+           (mult:TI
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:TI
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pdmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8012,29 +8012,29 @@
 
 (define_insn "amethyst_simd_pdmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (plus:TI
-       (sign_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
+     (ss_truncate:DI
        (plus:TI
-         (mult:TI
-           (sign_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:TI
-           (sign_extend:TI
-             (vec_select:SI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:TI
-             (vec_select:SI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+         (sign_extend:TI
+           (match_operand:DI 3 "register_operand" "r"))
+         (plus:TI
+           (mult:TI
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:TI
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pdmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8042,25 +8042,25 @@
 
 (define_insn "amethyst_simd_pdzmaccu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (plus:DI
-     (mult:DI
-       (zero_extend:DI
-         (vec_select:SI
-           (match_operand:V2SI 1 "register_operand" "r")
-           (parallel [(const_int 0)])))
-       (zero_extend:DI
-         (vec_select:SI
-           (match_operand:V2SI 2 "register_operand" "r")
-           (parallel [(const_int 0)]))))
-     (mult:DI
-       (zero_extend:DI
-         (vec_select:SI
-           (match_dup 1)
-           (parallel [(const_int 1)])))
-       (zero_extend:DI
-         (vec_select:SI
-           (match_dup 2)
-           (parallel [(const_int 1)]))))))]
+     (plus:DI
+       (mult:DI
+         (zero_extend:DI
+           (vec_select:SI
+             (match_operand:V2SI 1 "register_operand" "r")
+             (parallel [(const_int 0)])))
+         (zero_extend:DI
+           (vec_select:SI
+             (match_operand:V2SI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))))
+       (mult:DI
+         (zero_extend:DI
+           (vec_select:SI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (zero_extend:DI
+           (vec_select:SI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))))]
   "TARGET_AMETHYST"
   "pdzmaccu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8068,25 +8068,25 @@
 
 (define_insn "amethyst_simd_pdzmaccs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (plus:DI
-     (mult:DI
-       (sign_extend:DI
-         (vec_select:SI
-           (match_operand:V2SI 1 "register_operand" "r")
-           (parallel [(const_int 0)])))
-       (sign_extend:DI
-         (vec_select:SI
-           (match_operand:V2SI 2 "register_operand" "r")
-           (parallel [(const_int 0)]))))
-     (mult:DI
-       (sign_extend:DI
-         (vec_select:SI
-           (match_dup 1)
-           (parallel [(const_int 1)])))
-       (sign_extend:DI
-         (vec_select:SI
-           (match_dup 2)
-           (parallel [(const_int 1)]))))))]
+     (plus:DI
+       (mult:DI
+         (sign_extend:DI
+           (vec_select:SI
+             (match_operand:V2SI 1 "register_operand" "r")
+             (parallel [(const_int 0)])))
+         (sign_extend:DI
+           (vec_select:SI
+             (match_operand:V2SI 2 "register_operand" "r")
+             (parallel [(const_int 0)]))))
+       (mult:DI
+         (sign_extend:DI
+           (vec_select:SI
+             (match_dup 1)
+             (parallel [(const_int 1)])))
+         (sign_extend:DI
+           (vec_select:SI
+             (match_dup 2)
+             (parallel [(const_int 1)]))))))]
   "TARGET_AMETHYST"
   "pdzmaccs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8094,26 +8094,26 @@
 
 (define_insn "amethyst_simd_pdzmaccqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (plus:TI
-       (mult:TI
-         (zero_extend:TI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:TI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:TI
-         (zero_extend:TI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:TI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (us_truncate:DI
+       (plus:TI
+         (mult:TI
+           (zero_extend:TI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:TI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:TI
+           (zero_extend:TI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:TI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdzmaccqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8121,26 +8121,26 @@
 
 (define_insn "amethyst_simd_pdzmaccqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (plus:TI
-       (mult:TI
-         (sign_extend:TI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:TI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:TI
-         (sign_extend:TI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:TI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (ss_truncate:DI
+       (plus:TI
+         (mult:TI
+           (sign_extend:TI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:TI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:TI
+           (sign_extend:TI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:TI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdzmaccqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8148,27 +8148,27 @@
 
 (define_insn "amethyst_simd_pdmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (minus:DI
-     (match_operand:DI 3 "register_operand" "r")
-     (plus:DI
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:DI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (minus:DI
+       (match_operand:DI 3 "register_operand" "r")
+       (plus:DI
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:DI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8176,27 +8176,27 @@
 
 (define_insn "amethyst_simd_pdmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (minus:DI
-     (match_operand:DI 3 "register_operand" "r")
-     (plus:DI
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:DI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (minus:DI
+       (match_operand:DI 3 "register_operand" "r")
+       (plus:DI
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:DI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8204,29 +8204,29 @@
 
 (define_insn "amethyst_simd_pdmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (minus:TI
-       (zero_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
-       (plus:TI
-         (mult:TI
-           (zero_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:TI
-           (zero_extend:TI
-             (vec_select:SI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:TI
-             (vec_select:SI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (us_truncate:DI
+       (minus:TI
+         (zero_extend:TI
+           (match_operand:DI 3 "register_operand" "r"))
+         (plus:TI
+           (mult:TI
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:TI
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pdmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8234,29 +8234,29 @@
 
 (define_insn "amethyst_simd_pdmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (minus:TI
-       (sign_extend:TI
-         (match_operand:DI 3 "register_operand" "r"))
-       (plus:TI
-         (mult:TI
-           (sign_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:TI
-           (sign_extend:TI
-             (vec_select:SI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:TI
-             (vec_select:SI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (ss_truncate:DI
+       (minus:TI
+         (sign_extend:TI
+           (match_operand:DI 3 "register_operand" "r"))
+         (plus:TI
+           (mult:TI
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:TI
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pdmsubqs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8264,26 +8264,26 @@
 
 (define_insn "amethyst_simd_pdzmsubu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (neg:DI
-     (plus:DI
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (zero_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (zero_extend:DI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (zero_extend:DI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (neg:DI
+       (plus:DI
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (zero_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (zero_extend:DI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (zero_extend:DI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdzmsubu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8291,26 +8291,26 @@
 
 (define_insn "amethyst_simd_pdzmsubs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (neg:DI
-     (plus:DI
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 1 "register_operand" "r")
-             (parallel [(const_int 0)])))
-         (sign_extend:DI
-           (vec_select:SI
-             (match_operand:V2SI 2 "register_operand" "r")
-             (parallel [(const_int 0)]))))
-       (mult:DI
-         (sign_extend:DI
-           (vec_select:SI
-             (match_dup 1)
-             (parallel [(const_int 1)])))
-         (sign_extend:DI
-           (vec_select:SI
-             (match_dup 2)
-             (parallel [(const_int 1)])))))))]
+     (neg:DI
+       (plus:DI
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:DI
+             (vec_select:SI
+               (match_operand:V2SI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:SI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:DI
+             (vec_select:SI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
   "TARGET_AMETHYST"
   "pdzmsubs.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8318,27 +8318,27 @@
 
 (define_insn "amethyst_simd_pdzmsubqu_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (us_truncate:DI
-     (neg:TI
-       (plus:TI
-         (mult:TI
-           (zero_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (zero_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:TI
-           (zero_extend:TI
-             (vec_select:SI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (zero_extend:TI
-             (vec_select:SI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (us_truncate:DI
+       (neg:TI
+         (plus:TI
+           (mult:TI
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:TI
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (zero_extend:TI
+               (vec_select:SI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pdzmsubqu.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -8346,28 +8346,4828 @@
 
 (define_insn "amethyst_simd_pdzmsubqs_w"
   [(set (match_operand:DI 0 "register_operand" "=r")
-   (ss_truncate:DI
-     (neg:TI
-       (plus:TI
-         (mult:TI
-           (sign_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 1 "register_operand" "r")
-               (parallel [(const_int 0)])))
-           (sign_extend:TI
-             (vec_select:SI
-               (match_operand:V2SI 2 "register_operand" "r")
-               (parallel [(const_int 0)]))))
-         (mult:TI
-           (sign_extend:TI
-             (vec_select:SI
-               (match_dup 1)
-               (parallel [(const_int 1)])))
-           (sign_extend:TI
-             (vec_select:SI
-               (match_dup 2)
-               (parallel [(const_int 1)]))))))))]
+     (ss_truncate:DI
+       (neg:TI
+         (plus:TI
+           (mult:TI
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_operand:V2SI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:TI
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:TI
+               (vec_select:SI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
   "TARGET_AMETHYST"
   "pdzmsubqs.w\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmacccc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (plus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pwmacccc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmaccccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (plus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))))))]
+  "TARGET_AMETHYST"
+  "pwmaccccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmacccc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (vec_concat:V2HI
+       (plus:HI
+         (minus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (minus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))
+       (plus:HI
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 0)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))))))]
+  "TARGET_AMETHYST"
+  "pwzmacccc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmaccccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (vec_concat:V2SI
+         (plus:SI
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pwzmaccccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmsubcc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (minus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pwmsubcc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmsubccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (minus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))))))]
+  "TARGET_AMETHYST"
+  "pwmsubccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmsubcc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (neg:V2HI
+       (vec_concat:V2HI
+         (plus:HI
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubcc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmsubccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (neg:V2SI
+         (vec_concat:V2SI
+           (plus:SI
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmacccc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (plus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (minus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))))))]
+  "TARGET_AMETHYST"
+  "pwmacccc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmaccccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (plus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (minus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))))))]
+  "TARGET_AMETHYST"
+  "pwmaccccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmacccc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (vec_concat:V2SI
+       (minus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 1)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 0)])))))))]
+  "TARGET_AMETHYST"
+  "pwzmacccc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmaccccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (vec_concat:V2DI
+         (minus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))))))]
+  "TARGET_AMETHYST"
+  "pwzmaccccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmsubcc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (minus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (minus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))))))]
+  "TARGET_AMETHYST"
+  "pwmsubcc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmsubccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (minus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (minus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))))))]
+  "TARGET_AMETHYST"
+  "pwmsubccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmsubcc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (neg:V2SI
+       (vec_concat:V2SI
+         (minus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubcc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmsubccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (neg:V2DI
+         (vec_concat:V2DI
+           (minus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmacccc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (plus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (plus:HI
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:HI
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)])))))))
+         (plus:HI
+           (plus:HI
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))
+           (plus:HI
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)])))))
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdmacccc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmaccccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (plus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (plus:SI
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_operand:V8QI 1 "register_operand" "r")
+                       (parallel [(const_int 0)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_operand:V8QI 2 "register_operand" "r")
+                       (parallel [(const_int 0)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 1)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 1)])))))
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 2)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 2)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 3)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 3)]))))))
+             (plus:SI
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 4)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 4)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 5)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 5)])))))
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 6)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 6)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 7)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 7)])))))))
+           (plus:SI
+             (plus:SI
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 0)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 1)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 1)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 0)])))))
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 2)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 3)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 3)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 2)]))))))
+             (plus:SI
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 4)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 5)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 5)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 4)])))))
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 6)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 7)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 7)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 6)])))))))))))]
+  "TARGET_AMETHYST"
+  "pdmaccccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmacccc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (vec_concat:V2HI
+       (plus:HI
+         (plus:HI
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)])))))
+           (minus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)])))))))
+       (plus:HI
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 5)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 5)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 4)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 7)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 7)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 6)])))))))))]
+  "TARGET_AMETHYST"
+  "pdzmacccc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmaccccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (vec_concat:V2SI
+         (plus:SI
+           (plus:SI
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (minus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)])))))))
+         (plus:SI
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdzmaccccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmsubcc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (minus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (plus:HI
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:HI
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)])))))))
+         (plus:HI
+           (plus:HI
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))
+           (plus:HI
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)])))))
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubcc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmsubccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (minus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (plus:SI
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_operand:V8QI 1 "register_operand" "r")
+                       (parallel [(const_int 0)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_operand:V8QI 2 "register_operand" "r")
+                       (parallel [(const_int 0)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 1)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 1)])))))
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 2)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 2)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 3)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 3)]))))))
+             (plus:SI
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 4)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 4)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 5)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 5)])))))
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 6)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 6)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 7)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 7)])))))))
+           (plus:SI
+             (plus:SI
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 0)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 1)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 1)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 0)])))))
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 2)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 3)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 3)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 2)]))))))
+             (plus:SI
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 4)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 5)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 5)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 4)])))))
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 6)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 7)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 7)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 6)])))))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmsubcc_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (neg:V2HI
+       (vec_concat:V2HI
+         (plus:HI
+           (plus:HI
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_operand:V8QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:HI
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)])))))
+             (minus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)])))))))
+         (plus:HI
+           (plus:HI
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))
+           (plus:HI
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 5)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 5)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 4)])))))
+             (plus:HI
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 7)]))))
+               (mult:HI
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 7)])))
+                 (sign_extend:HI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 6)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubcc.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmsubccq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (neg:V2SI
+         (vec_concat:V2SI
+           (plus:SI
+             (plus:SI
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_operand:V8QI 1 "register_operand" "r")
+                       (parallel [(const_int 0)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_operand:V8QI 2 "register_operand" "r")
+                       (parallel [(const_int 0)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 1)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 1)])))))
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 2)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 2)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 3)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 3)]))))))
+             (plus:SI
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 4)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 4)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 5)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 5)])))))
+               (minus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 6)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 6)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 7)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 7)])))))))
+           (plus:SI
+             (plus:SI
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 0)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 1)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 1)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 0)])))))
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 2)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 3)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 3)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 2)]))))))
+             (plus:SI
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 4)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 5)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 5)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 4)])))))
+               (plus:SI
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 6)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 7)]))))
+                 (mult:SI
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 1)
+                       (parallel [(const_int 7)])))
+                   (sign_extend:SI
+                     (vec_select:QI
+                       (match_dup 2)
+                       (parallel [(const_int 6)])))))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubccq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmacccc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (plus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (plus:SI
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pdmacccc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmaccccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (plus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (plus:DI
+             (minus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_operand:V4HI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_operand:V4HI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:DI
+             (plus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdmaccccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmacccc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (vec_concat:V2SI
+       (plus:SI
+         (minus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (minus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))
+       (plus:SI
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 1)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 3)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))))))]
+  "TARGET_AMETHYST"
+  "pdzmacccc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmaccccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (vec_concat:V2DI
+         (plus:DI
+           (minus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:DI
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pdzmaccccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmsubcc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (minus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (plus:SI
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubcc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmsubccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (minus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (plus:DI
+             (minus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_operand:V4HI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_operand:V4HI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:DI
+             (plus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmsubcc_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (neg:V2SI
+       (vec_concat:V2SI
+         (plus:SI
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_operand:V4HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (minus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 1)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 3)])))
+               (sign_extend:SI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 2)])))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubcc.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmsubccq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (neg:V2DI
+         (vec_concat:V2DI
+           (plus:DI
+             (minus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_operand:V4HI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_operand:V4HI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (minus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:DI
+             (plus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 1)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 1)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 0)])))))
+             (plus:DI
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))
+               (mult:DI
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 1)
+                     (parallel [(const_int 3)])))
+                 (sign_extend:DI
+                   (vec_select:HI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubccq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmacccr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (plus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V2QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pwmacccr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmacccrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (plus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V2QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))))))]
+  "TARGET_AMETHYST"
+  "pwmacccrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmacccr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (vec_concat:V2HI
+       (plus:HI
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_operand:V4QI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_operand:V2QI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:HI
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 0)]))))
+         (mult:HI
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (sign_extend:HI
+             (vec_select:QI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
+  "TARGET_AMETHYST"
+  "pwzmacccr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmacccrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (vec_concat:V2SI
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_operand:V2QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pwzmacccrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmsubcr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (minus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V2QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pwmsubcr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmsubcrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (minus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V2QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))))))]
+  "TARGET_AMETHYST"
+  "pwmsubcrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmsubcr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (neg:V2HI
+       (vec_concat:V2HI
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V2QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubcr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwzmsubcrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (neg:V2SI
+         (vec_concat:V2SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V2QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubcrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pwmacccr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (plus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (match_operand:HI 2 "register_operand" "r")))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (match_dup 2))))))]
+  "TARGET_AMETHYST"
+  "pwmacccr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmacccrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (plus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (match_operand:HI 2 "register_operand" "r")))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (match_dup 2)))))))]
+  "TARGET_AMETHYST"
+  "pwmacccrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmacccr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (vec_concat:V2SI
+       (mult:SI
+         (sign_extend:SI
+           (vec_select:HI
+             (match_operand:V2HI 1 "register_operand" "r")
+             (parallel [(const_int 0)])))
+         (sign_extend:SI
+           (match_operand:HI 2 "register_operand" "r")))
+       (mult:SI
+         (sign_extend:SI
+           (vec_select:HI
+             (match_dup 1)
+             (parallel [(const_int 0)])))
+         (sign_extend:SI
+           (match_dup 2)))))]
+  "TARGET_AMETHYST"
+  "pwzmacccr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmacccrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (vec_concat:V2DI
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:DI
+             (match_operand:HI 2 "register_operand" "r")))
+         (mult:DI
+           (sign_extend:DI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:DI
+             (match_dup 2))))))]
+  "TARGET_AMETHYST"
+  "pwzmacccrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmsubcr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (minus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (match_operand:HI 2 "register_operand" "r")))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (match_dup 2))))))]
+  "TARGET_AMETHYST"
+  "pwmsubcr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwmsubcrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (minus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (match_operand:HI 2 "register_operand" "r")))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (match_dup 2)))))))]
+  "TARGET_AMETHYST"
+  "pwmsubcrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmsubcr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (neg:V2SI
+       (vec_concat:V2SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (match_operand:HI 2 "register_operand" "r")))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (match_dup 2))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubcr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pwzmsubcrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (neg:V2DI
+         (vec_concat:V2DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (match_operand:HI 2 "register_operand" "r")))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (match_dup 2)))))))]
+  "TARGET_AMETHYST"
+  "pwzmsubcrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmacccr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (plus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
+  "TARGET_AMETHYST"
+  "pdmacccr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmacccrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (plus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdmacccrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmacccr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (vec_concat:V2HI
+       (plus:HI
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V8QI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_operand:V4QI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 4)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 6)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))
+       (plus:HI
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:HI
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 4)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 2)]))))
+           (mult:HI
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 1)
+                 (parallel [(const_int 6)])))
+             (sign_extend:HI
+               (vec_select:QI
+                 (match_dup 2)
+                 (parallel [(const_int 3)]))))))))]
+  "TARGET_AMETHYST"
+  "pdzmacccr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmacccrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (vec_concat:V2SI
+         (plus:SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:SI
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:SI
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:SI
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:SI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
+  "TARGET_AMETHYST"
+  "pdzmacccrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmsubcr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (minus:V2HI
+       (match_operand:V2HI 3 "register_operand" "r")
+       (vec_concat:V2HI
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubcr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmsubcrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (minus:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 3 "register_operand" "r"))
+         (vec_concat:V2SI
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubcrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmsubcr_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (neg:V2HI
+       (vec_concat:V2HI
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V8QI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_operand:V4QI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)]))))))
+         (plus:HI
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:HI
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 4)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 2)]))))
+             (mult:HI
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 1)
+                   (parallel [(const_int 6)])))
+               (sign_extend:HI
+                 (vec_select:QI
+                   (match_dup 2)
+                   (parallel [(const_int 3)])))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubcr.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdzmsubcrq_b"
+  [(set (match_operand:V2HI 0 "register_operand" "=r")
+     (ss_truncate:V2HI
+       (neg:V2SI
+         (vec_concat:V2SI
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V8QI 1 "register_operand" "r")
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_operand:V4QI 2 "register_operand" "r")
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))
+           (plus:SI
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 0)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 0)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 2)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 1)])))))
+             (plus:SI
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 4)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 2)]))))
+               (mult:SI
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 1)
+                     (parallel [(const_int 6)])))
+                 (sign_extend:SI
+                   (vec_select:QI
+                     (match_dup 2)
+                     (parallel [(const_int 3)]))))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubcrq.b\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "SI")])
+
+(define_insn "amethyst_simd_pdmacccr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (plus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pdmacccr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmacccrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (plus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))))))]
+  "TARGET_AMETHYST"
+  "pdmacccrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmacccr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (vec_concat:V2SI
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V4HI 1 "register_operand" "r")
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))
+       (plus:SI
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 0)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 0)]))))
+         (mult:SI
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 1)
+               (parallel [(const_int 2)])))
+           (sign_extend:SI
+             (vec_select:HI
+               (match_dup 2)
+               (parallel [(const_int 1)])))))))]
+  "TARGET_AMETHYST"
+  "pdzmacccr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmacccrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (vec_concat:V2DI
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:DI
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:DI
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:DI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pdzmacccrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmsubcr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (minus:V2SI
+       (match_operand:V2SI 3 "register_operand" "r")
+       (vec_concat:V2SI
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubcr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdmsubcrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (minus:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 3 "register_operand" "r"))
+         (vec_concat:V2DI
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))))))]
+  "TARGET_AMETHYST"
+  "pdmsubcrq.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmsubcr_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (neg:V2SI
+       (vec_concat:V2SI
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V4HI 1 "register_operand" "r")
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_operand:V2HI 2 "register_operand" "r")
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)])))))
+         (plus:SI
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 0)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 0)]))))
+           (mult:SI
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 1)
+                 (parallel [(const_int 2)])))
+             (sign_extend:SI
+               (vec_select:HI
+                 (match_dup 2)
+                 (parallel [(const_int 1)]))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubcr.h\t%0,%1,%2"
+  [(set_attr "type" "imul")
+   (set_attr "mode" "DI")])
+
+(define_insn "amethyst_simd_pdzmsubcrq_h"
+  [(set (match_operand:V2SI 0 "register_operand" "=r")
+     (ss_truncate:V2SI
+       (neg:V2DI
+         (vec_concat:V2DI
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V4HI 1 "register_operand" "r")
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_operand:V2HI 2 "register_operand" "r")
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))
+           (plus:DI
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 0)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 0)]))))
+             (mult:DI
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 1)
+                   (parallel [(const_int 2)])))
+               (sign_extend:DI
+                 (vec_select:HI
+                   (match_dup 2)
+                   (parallel [(const_int 1)])))))))))]
+  "TARGET_AMETHYST"
+  "pdzmsubcrq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
    (set_attr "mode" "DI")])
