@@ -4069,11 +4069,16 @@
 
 (define_insn "amethyst_simd_pwmulcrt_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (truncate:V4QI (lshiftrt:V4HI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (vec_select:V4QI (match_operand:V2QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))
- (const_int 8))))]
+     (truncate:V4QI
+       (lshiftrt:V4HI
+         (mult:V4HI
+           (sign_extend:V4HI
+             (match_operand:V4QI 1 "register_operand" "r"))
+           (sign_extend:V4HI
+             (vec_select:V4QI
+               (match_operand:V2QI 2 "register_operand" "r")
+               (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pwmulcrt.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4081,10 +4086,11 @@
 
 (define_insn "amethyst_simd_pwmulcrb_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (mult:V4QI
-      (match_operand:V4QI 1 "register_operand" "r")
-      (vec_select:V4QI (match_operand:V2QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))]
+     (mult:V4QI
+       (match_operand:V4QI 1 "register_operand" "r")
+       (vec_select:V4QI
+         (match_operand:V2QI 2 "register_operand" "r")
+         (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))]
   "TARGET_AMETHYST"
   "pwmulcrb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4092,11 +4098,14 @@
 
 (define_insn "amethyst_simd_pwmulcrbq_b"
   [(set (match_operand:V4QI 0 "register_operand" "=r")
-    (us_truncate:V4QI (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (vec_select:V4QI (match_operand:V2QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))
-))]
+     (ss_truncate:V4QI
+       (mult:V4HI
+         (sign_extend:V4HI
+           (match_operand:V4QI 1 "register_operand" "r"))
+         (sign_extend:V4HI
+           (vec_select:V4QI
+             (match_operand:V2QI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))))]
   "TARGET_AMETHYST"
   "pwmulcrbq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4104,9 +4113,15 @@
 
 (define_insn "amethyst_simd_pwmulcrt_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (truncate:V2HI (lshiftrt:V2SI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (vec_duplicate: V2HI (match_operand:HI 2 "register_operand" "r")))) (const_int 16))))]
+     (truncate:V2HI
+       (lshiftrt:V2SI
+         (mult:V2SI
+           (sign_extend:V2SI
+             (match_operand:V2HI 1 "register_operand" "r"))
+           (sign_extend:V2SI
+             (vec_duplicate:V2HI
+               (match_operand:HI 2 "register_operand" "r"))))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pwmulcrt.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4114,9 +4129,10 @@
 
 (define_insn "amethyst_simd_pwmulcrb_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (mult:V2HI
-      (match_operand:V2HI 1 "register_operand" "r")
-      (vec_duplicate:V2HI (match_operand:HI 2 "register_operand" "r"))))]
+     (mult:V2HI
+       (match_operand:V2HI 1 "register_operand" "r")
+       (vec_duplicate:V2HI
+         (match_operand:HI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pwmulcrb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4124,9 +4140,13 @@
 
 (define_insn "amethyst_simd_pwmulcrbq_h"
   [(set (match_operand:V2HI 0 "register_operand" "=r")
-    (us_truncate:V2HI (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (vec_duplicate: V2HI (match_operand:HI 2 "register_operand" "r"))))))]
+     (ss_truncate:V2HI
+       (mult:V2SI
+         (sign_extend:V2SI
+           (match_operand:V2HI 1 "register_operand" "r"))
+         (sign_extend:V2SI
+           (vec_duplicate:V2HI
+             (match_operand:HI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pwmulcrbq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4134,11 +4154,16 @@
 
 (define_insn "amethyst_simd_pdmulcrt_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (truncate:V8QI (lshiftrt:V8HI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (sign_extend:V8HI (vec_select:V8QI (match_operand:V4QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1) (const_int 2) (const_int 2) (const_int 3) (const_int 3)]))))
- (const_int 8))))]
+     (truncate:V8QI
+       (lshiftrt:V8HI
+         (mult:V8HI
+           (sign_extend:V8HI
+             (match_operand:V8QI 1 "register_operand" "r"))
+           (sign_extend:V8HI
+             (vec_select:V8QI
+               (match_operand:V4QI 2 "register_operand" "r")
+               (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1) (const_int 2) (const_int 2) (const_int 3) (const_int 3)]))))
+         (const_int 8))))]
   "TARGET_AMETHYST"
   "pdmulcrt.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4146,10 +4171,11 @@
 
 (define_insn "amethyst_simd_pdmulcrb_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (mult:V8QI
-      (match_operand:V8QI 1 "register_operand" "r")
-      (vec_select:V8QI (match_operand:V4QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1) (const_int 2) (const_int 2) (const_int 3) (const_int 3)]))))]
+     (mult:V8QI
+       (match_operand:V8QI 1 "register_operand" "r")
+       (vec_select:V8QI
+         (match_operand:V4QI 2 "register_operand" "r")
+         (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1) (const_int 2) (const_int 2) (const_int 3) (const_int 3)]))))]
   "TARGET_AMETHYST"
   "pdmulcrb.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4157,11 +4183,14 @@
 
 (define_insn "amethyst_simd_pdmulcrbq_b"
   [(set (match_operand:V8QI 0 "register_operand" "=r")
-    (us_truncate:V8QI (mult:V8HI
-      (sign_extend:V8HI (match_operand:V8QI 1 "register_operand" "r"))
-      (sign_extend:V8HI (vec_select:V8QI (match_operand:V4QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1) (const_int 2) (const_int 2) (const_int 3) (const_int 3)]))))
-))]
+     (ss_truncate:V8QI
+       (mult:V8HI
+         (sign_extend:V8HI
+           (match_operand:V8QI 1 "register_operand" "r"))
+         (sign_extend:V8HI
+           (vec_select:V8QI
+             (match_operand:V4QI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1) (const_int 2) (const_int 2) (const_int 3) (const_int 3)]))))))]
   "TARGET_AMETHYST"
   "pdmulcrbq.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4169,11 +4198,16 @@
 
 (define_insn "amethyst_simd_pdmulcrt_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (truncate:V4HI (lshiftrt:V4SI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (sign_extend:V4SI (vec_select:V4HI (match_operand:V2HI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))
- (const_int 16))))]
+     (truncate:V4HI
+       (lshiftrt:V4SI
+         (mult:V4SI
+           (sign_extend:V4SI
+             (match_operand:V4HI 1 "register_operand" "r"))
+           (sign_extend:V4SI
+             (vec_select:V4HI
+               (match_operand:V2HI 2 "register_operand" "r")
+               (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))
+         (const_int 16))))]
   "TARGET_AMETHYST"
   "pdmulcrt.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4181,10 +4215,11 @@
 
 (define_insn "amethyst_simd_pdmulcrb_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (mult:V4HI
-      (match_operand:V4HI 1 "register_operand" "r")
-      (vec_select:V4HI (match_operand:V2HI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))]
+     (mult:V4HI
+       (match_operand:V4HI 1 "register_operand" "r")
+       (vec_select:V4HI
+         (match_operand:V2HI 2 "register_operand" "r")
+         (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))]
   "TARGET_AMETHYST"
   "pdmulcrb.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4192,11 +4227,14 @@
 
 (define_insn "amethyst_simd_pdmulcrbq_h"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (us_truncate:V4HI (mult:V4SI
-      (sign_extend:V4SI (match_operand:V4HI 1 "register_operand" "r"))
-      (sign_extend:V4SI (vec_select:V4HI (match_operand:V2HI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))
-))]
+     (ss_truncate:V4HI
+       (mult:V4SI
+         (sign_extend:V4SI
+           (match_operand:V4HI 1 "register_operand" "r"))
+         (sign_extend:V4SI
+           (vec_select:V4HI
+             (match_operand:V2HI 2 "register_operand" "r")
+             (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)]))))))]
   "TARGET_AMETHYST"
   "pdmulcrbq.h\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4204,9 +4242,15 @@
 
 (define_insn "amethyst_simd_pdmulcrt_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (truncate:V2SI (lshiftrt:V2DI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (sign_extend:V2DI (vec_duplicate: V2SI (match_operand:SI 2 "register_operand" "r")))) (const_int 32))))]
+     (truncate:V2SI
+       (lshiftrt:V2DI
+         (mult:V2DI
+           (sign_extend:V2DI
+             (match_operand:V2SI 1 "register_operand" "r"))
+           (sign_extend:V2DI
+             (vec_duplicate:V2SI
+               (match_operand:SI 2 "register_operand" "r"))))
+         (const_int 32))))]
   "TARGET_AMETHYST"
   "pdmulcrt.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4214,9 +4258,10 @@
 
 (define_insn "amethyst_simd_pdmulcrb_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (mult:V2SI
-      (match_operand:V2SI 1 "register_operand" "r")
-      (vec_duplicate:V2SI (match_operand:SI 2 "register_operand" "r"))))]
+     (mult:V2SI
+       (match_operand:V2SI 1 "register_operand" "r")
+       (vec_duplicate:V2SI
+         (match_operand:SI 2 "register_operand" "r"))))]
   "TARGET_AMETHYST"
   "pdmulcrb.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4224,9 +4269,13 @@
 
 (define_insn "amethyst_simd_pdmulcrbq_w"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (us_truncate:V2SI (mult:V2DI
-      (sign_extend:V2DI (match_operand:V2SI 1 "register_operand" "r"))
-      (sign_extend:V2DI (vec_duplicate: V2SI (match_operand:SI 2 "register_operand" "r"))))))]
+     (ss_truncate:V2SI
+       (mult:V2DI
+         (sign_extend:V2DI
+           (match_operand:V2SI 1 "register_operand" "r"))
+         (sign_extend:V2DI
+           (vec_duplicate:V2SI
+             (match_operand:SI 2 "register_operand" "r"))))))]
   "TARGET_AMETHYST"
   "pdmulcrbq.w\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4234,10 +4283,13 @@
 
 (define_insn "amethyst_simd_pwmulcrw_b"
   [(set (match_operand:V4HI 0 "register_operand" "=r")
-    (mult:V4HI
-      (sign_extend:V4HI (match_operand:V4QI 1 "register_operand" "r"))
-      (sign_extend:V4HI (vec_select:V4QI (match_operand:V2QI 2 "register_operand" "r")
-        (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)])))))]
+     (mult:V4HI
+       (sign_extend:V4HI
+         (match_operand:V4QI 1 "register_operand" "r"))
+       (sign_extend:V4HI
+         (vec_select:V4QI
+           (match_operand:V2QI 2 "register_operand" "r")
+           (parallel [(const_int 0) (const_int 0) (const_int 1) (const_int 1)])))))]
   "TARGET_AMETHYST"
   "pwmulcrw.b\t%0,%1,%2"
   [(set_attr "type" "imul")
@@ -4245,9 +4297,12 @@
 
 (define_insn "amethyst_simd_pwmulcrw_h"
   [(set (match_operand:V2SI 0 "register_operand" "=r")
-    (mult:V2SI
-      (sign_extend:V2SI (match_operand:V2HI 1 "register_operand" "r"))
-      (sign_extend:V2SI (vec_duplicate:V2HI (match_operand:HI 2 "register_operand" "r")))))]
+     (mult:V2SI
+       (sign_extend:V2SI
+         (match_operand:V2HI 1 "register_operand" "r"))
+       (sign_extend:V2SI
+         (vec_duplicate:V2HI
+           (match_operand:HI 2 "register_operand" "r")))))]
   "TARGET_AMETHYST"
   "pwmulcrw.h\t%0,%1,%2"
   [(set_attr "type" "imul")
