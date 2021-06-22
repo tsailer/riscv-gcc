@@ -62,6 +62,44 @@ riscv_cpu_cpp_builtins (cpp_reader *pfile)
       builtin_define ("__riscv_fsqrt");
     }
 
+  if (TARGET_AMETHYST)
+    builtin_define ("__riscv_amethyst");
+
+  if (TARGET_ZBA)
+    builtin_define ("__riscv_zba");
+  if (TARGET_ZBB)
+    builtin_define ("__riscv_zbb");
+  if (TARGET_ZBS)
+    builtin_define ("__riscv_zbs");
+  if (TARGET_ZBP)
+    builtin_define ("__riscv_zbp");
+  if (TARGET_ZBE)
+    builtin_define ("__riscv_zbe");
+  if (TARGET_ZBF)
+    builtin_define ("__riscv_zbf");
+  if (TARGET_ZBC)
+    builtin_define ("__riscv_zbc");
+  if (TARGET_ZBR)
+    builtin_define ("__riscv_zbr");
+  if (TARGET_ZBM)
+    builtin_define ("__riscv_zbm");
+  if (TARGET_ZBT)
+    builtin_define ("__riscv_zbt");
+  if (TARGET_ZKND)
+    builtin_define ("__riscv_zknd");
+  if (TARGET_ZKNE)
+    builtin_define ("__riscv_zkne");
+  if (TARGET_ZKNH)
+    builtin_define ("__riscv_zknh");
+  if (TARGET_ZKSH)
+    builtin_define ("__riscv_zksh");
+  if (TARGET_ZKSED)
+    builtin_define ("__riscv_zksed");
+  if (TARGET_ZICSR)
+    builtin_define ("__riscv_zicsr");
+  if (TARGET_ZIFENCEI)
+    builtin_define ("__riscv_zifencei");
+
   switch (riscv_abi)
     {
     case ABI_ILP32E:

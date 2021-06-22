@@ -185,35 +185,35 @@
   "amethyst_pipea")
 
 (define_insn_reservation "amethyst_arith_rfnone" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "none"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "none"))
   "amethyst_pipea")
 
 (define_insn_reservation "amethyst_arith_rfeven" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "even"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "even"))
   "amethyst_pipea+amethyst_rfeven")
 
 (define_insn_reservation "amethyst_arith_rfodd" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "odd"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "odd"))
   "amethyst_pipea+amethyst_rfodd")
 
 (define_insn_reservation "amethyst_arith_rfboth" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "both"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "no")) (eq_attr "amethyst_rfwriteports" "both"))
   "amethyst_pipea+amethyst_rfboth")
 
 (define_insn_reservation "amethyst_arithb_rfnone" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "none"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "none"))
   "(amethyst_pipea|amethyst_pipeb)")
 
 (define_insn_reservation "amethyst_arithb_rfeven" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "even"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "even"))
   "(amethyst_pipea|amethyst_pipeb)+amethyst_rfeven")
 
 (define_insn_reservation "amethyst_arithb_rfodd" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "odd"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "odd"))
   "(amethyst_pipea|amethyst_pipeb)+amethyst_rfodd")
 
 (define_insn_reservation "amethyst_arithb_rfboth" 1
-  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "both"))
+  (and (and (eq_attr "type" "unknown,mtc,mfc,const,arith,logical,shift,slt,move,fmove,fadd,fmul,fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,bitmanip,crypto") (eq_attr "amethyst_maypipeb" "yes")) (eq_attr "amethyst_rfwriteports" "both"))
   "(amethyst_pipea|amethyst_pipeb)+amethyst_rfboth")
 
 (define_insn_reservation "amethyst_idiv_rfnone" 5

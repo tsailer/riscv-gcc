@@ -87,7 +87,25 @@ struct riscv_builtin_description {
   unsigned int (*avail) (void);
 };
 
-AVAIL (bitmanip64, TARGET_64BIT && TARGET_BITMANIP)
+AVAIL (bitmanip_zbb64, TARGET_ZBB && TARGET_64BIT)
+AVAIL (bitmanip_zbc32, TARGET_ZBC && !TARGET_64BIT)
+AVAIL (bitmanip_zbc64, TARGET_ZBC && TARGET_64BIT)
+AVAIL (bitmanip_zbe32, TARGET_ZBE && !TARGET_64BIT)
+AVAIL (bitmanip_zbe64, TARGET_ZBE && TARGET_64BIT)
+AVAIL (bitmanip_zbp32, TARGET_ZBP && !TARGET_64BIT)
+AVAIL (bitmanip_zbp64, TARGET_ZBP && TARGET_64BIT)
+AVAIL (bitmanip_zbr32, TARGET_ZBR && !TARGET_64BIT)
+AVAIL (bitmanip_zbr64, TARGET_ZBR && TARGET_64BIT)
+AVAIL (bitmanip_zbt32, TARGET_ZBT && !TARGET_64BIT)
+AVAIL (bitmanip_zbt64, TARGET_ZBT && TARGET_64BIT)
+AVAIL (bitmanip_zbb_zbp32, (TARGET_ZBB || TARGET_ZBP) && !TARGET_64BIT)
+AVAIL (bitmanip_zbb_zbp64, (TARGET_ZBB || TARGET_ZBP) && TARGET_64BIT)
+AVAIL (bitmanip_zbp_zbe_zbf32, (TARGET_ZBP || TARGET_ZBE || TARGET_ZBF) && !TARGET_64BIT)
+AVAIL (bitmanip_zbp_zbe_zbf64, (TARGET_ZBP || TARGET_ZBE || TARGET_ZBF) && TARGET_64BIT)
+AVAIL (crypto_aes32e, TARGET_ZKNE && !TARGET_64BIT)
+AVAIL (crypto_aes32d, TARGET_ZKND && !TARGET_64BIT)
+AVAIL (crypto_sha, TARGET_ZKNH)
+AVAIL (crypto_sha32, TARGET_ZKNH && !TARGET_64BIT)
 AVAIL (hard_float, TARGET_HARD_FLOAT)
 AVAIL (amethyst, TARGET_AMETHYST)
 
@@ -112,6 +130,25 @@ AVAIL (amethyst, TARGET_AMETHYST)
    are as for RISCV_BUILTIN.  */
 #define DIRECT_BUILTIN(INSN, FUNCTION_TYPE, AVAIL)			\
   RISCV_BUILTIN (INSN, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE, AVAIL)
+
+/* Same as DIRECT_BUILTIN, but only define if we are on a 32bit target.  */
+#define DIRECT_BUILTIN32(INSN, FUNCTION_TYPE, AVAIL)			\
+  RISCV_BUILTIN (INSN ## si, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE, AVAIL ## 32)
+
+/* Same as DIRECT_BUILTIN, but only define if we are on a 64bit target.  */
+#define DIRECT_BUILTIN64(INSN, FUNCTION_TYPE, AVAIL)			\
+  RISCV_BUILTIN (INSN ## di, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE, AVAIL ## 64)
+
+/* Same as DIRECT_BUILTIN, but define single builtin in 32bit mode and two builtins in 64bit target.  */
+#define DIRECT_BUILTINW(INSN, FUNCTION_TYPE32, FUNCTION_TYPE64, AVAIL)				\
+  RISCV_BUILTIN (INSN ## si, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE32, AVAIL ## 32),	\
+  RISCV_BUILTIN (INSN ## si, #INSN "w", RISCV_BUILTIN_DIRECT, FUNCTION_TYPE32, AVAIL ## 64),	\
+  RISCV_BUILTIN (INSN ## di, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE64, AVAIL ## 64)
+
+/* Same as DIRECT_BUILTIN, but define single builtin according to target word size.  */
+#define DIRECT_BUILTINX(INSN, FUNCTION_TYPE32, FUNCTION_TYPE64, AVAIL)				\
+  RISCV_BUILTIN (INSN ## si, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE32, AVAIL ## 32),	\
+  RISCV_BUILTIN (INSN ## di, #INSN, RISCV_BUILTIN_DIRECT, FUNCTION_TYPE64, AVAIL ## 64)
 
 /* Define __builtin_riscv_<INSN>, which is a RISCV_BUILTIN_DIRECT_NO_TARGET
    function mapped to instruction CODE_FOR_riscv_<INSN>,  FUNCTION_TYPE
@@ -160,8 +197,54 @@ tree intV8QI_type_node;
 
 static const struct riscv_builtin_description riscv_builtins[] = {
 #include "config/riscv/amethyst-builtins.h"
-  DIRECT_BUILTIN (cpopw, RISCV_SI_FTYPE_SI, bitmanip64),
-  DIRECT_BUILTIN (rolw, RISCV_SI_FTYPE_SI_SI, bitmanip64),
+  /* Bitmanip */
+  DIRECT_BUILTIN (cpopw, RISCV_SI_FTYPE_SI, bitmanip_zbb64),
+  DIRECT_BUILTIN (rolw, RISCV_SI_FTYPE_SI_SI, bitmanip_zbb_zbp64),
+  DIRECT_BUILTINW (pack, RISCV_SI_FTYPE_HI_HI, RISCV_DI_FTYPE_SI_SI, bitmanip_zbp_zbe_zbf),
+  DIRECT_BUILTINW (packu, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbp),
+  DIRECT_BUILTINW (packh, RISCV_SI_FTYPE_QI_QI, RISCV_DI_FTYPE_QI_QI, bitmanip_zbp_zbe_zbf),
+  DIRECT_BUILTINW (slo, RISCV_SI_FTYPE_SI_QI, RISCV_DI_FTYPE_DI_QI, bitmanip_zbb_zbp),
+  DIRECT_BUILTINW (sro, RISCV_SI_FTYPE_SI_QI, RISCV_DI_FTYPE_DI_QI, bitmanip_zbb_zbp),
+  DIRECT_BUILTINW (grev, RISCV_SI_FTYPE_SI_QI, RISCV_DI_FTYPE_DI_QI, bitmanip_zbp),
+  DIRECT_BUILTINW (gorc, RISCV_SI_FTYPE_SI_QI, RISCV_DI_FTYPE_DI_QI, bitmanip_zbp),
+  DIRECT_BUILTINW (shfl, RISCV_SI_FTYPE_SI_QI, RISCV_DI_FTYPE_DI_QI, bitmanip_zbp),
+  DIRECT_BUILTINW (unshfl, RISCV_SI_FTYPE_SI_QI, RISCV_DI_FTYPE_DI_QI, bitmanip_zbp),
+  DIRECT_BUILTINX (xpermn, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbp),
+  DIRECT_BUILTINX (xpermb, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbp),
+  DIRECT_BUILTINX (xpermh, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbp),
+  DIRECT_BUILTIN64 (xpermw, RISCV_DI_FTYPE_DI_DI, bitmanip_zbp),
+  DIRECT_BUILTINW (bmext, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbe),
+  DIRECT_BUILTINW (bmdep, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbe),
+  DIRECT_BUILTINX (clmul, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbc),
+  DIRECT_BUILTINX (clmulh, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbc),
+  DIRECT_BUILTINX (clmulr, RISCV_SI_FTYPE_SI_SI, RISCV_DI_FTYPE_DI_DI, bitmanip_zbc),
+  DIRECT_BUILTINX (crc32b, RISCV_SI_FTYPE_SI, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTINX (crc32h, RISCV_SI_FTYPE_SI, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTINX (crc32w, RISCV_SI_FTYPE_SI, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTIN64 (crc32d, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTINX (crc32cb, RISCV_SI_FTYPE_SI, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTINX (crc32ch, RISCV_SI_FTYPE_SI, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTINX (crc32cw, RISCV_SI_FTYPE_SI, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTIN64 (crc32cd, RISCV_DI_FTYPE_DI, bitmanip_zbr),
+  DIRECT_BUILTINX (cmov, RISCV_SI_FTYPE_SI_SI_SI, RISCV_DI_FTYPE_DI_DI_DI, bitmanip_zbt),
+  DIRECT_BUILTINW (fsl, RISCV_SI_FTYPE_SI_SI_SI, RISCV_DI_FTYPE_DI_DI_DI, bitmanip_zbt),
+  DIRECT_BUILTINW (fsr, RISCV_SI_FTYPE_SI_SI_SI, RISCV_DI_FTYPE_DI_DI_DI, bitmanip_zbt),
+  /* Crypto */
+  DIRECT_BUILTIN (aes32esmi, RISCV_SI_FTYPE_SI_SI, crypto_aes32e),
+  DIRECT_BUILTIN (aes32esi, RISCV_SI_FTYPE_SI_SI, crypto_aes32e),
+  DIRECT_BUILTIN (aes32dsmi, RISCV_SI_FTYPE_SI_SI, crypto_aes32d),
+  DIRECT_BUILTIN (aes32dsi, RISCV_SI_FTYPE_SI_SI, crypto_aes32d),
+  DIRECT_BUILTIN (sha256sig0, RISCV_SI_FTYPE_SI, crypto_sha),
+  DIRECT_BUILTIN (sha256sig1, RISCV_SI_FTYPE_SI, crypto_sha),
+  DIRECT_BUILTIN (sha256sum0, RISCV_SI_FTYPE_SI, crypto_sha),
+  DIRECT_BUILTIN (sha256sum1, RISCV_SI_FTYPE_SI, crypto_sha),
+  DIRECT_BUILTIN (sha512sum0r, RISCV_SI_FTYPE_SI_SI, crypto_sha32),
+  DIRECT_BUILTIN (sha512sum1r, RISCV_SI_FTYPE_SI_SI, crypto_sha32),
+  DIRECT_BUILTIN (sha512sig0l, RISCV_SI_FTYPE_SI_SI, crypto_sha32),
+  DIRECT_BUILTIN (sha512sig0h, RISCV_SI_FTYPE_SI_SI, crypto_sha32),
+  DIRECT_BUILTIN (sha512sig1l, RISCV_SI_FTYPE_SI_SI, crypto_sha32),
+  DIRECT_BUILTIN (sha512sig1h, RISCV_SI_FTYPE_SI_SI, crypto_sha32),
+  /* Float */
   DIRECT_BUILTIN (frflags, RISCV_USI_FTYPE, hard_float),
   DIRECT_NO_TARGET_BUILTIN (fsflags, RISCV_VOID_FTYPE_USI, hard_float)
 };

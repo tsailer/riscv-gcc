@@ -235,3 +235,7 @@
 (define_predicate "const63_operand"
   (and (match_code "const_int")
        (match_test "INTVAL (op) == 63")))
+
+(define_predicate "const_crypto_aes_bytelane"
+  (and (match_code "const_int")
+       (match_test "INTVAL (op) >= 0 && INTVAL (op) <= 3")))

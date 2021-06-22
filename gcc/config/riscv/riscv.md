@@ -45,9 +45,34 @@
 
   ;; Bitmanip
   UNSPEC_CPOPW
+  UNSPEC_GREV32
+  UNSPEC_GREV64
+  UNSPEC_GORC32
+  UNSPEC_GORC64
+  UNSPEC_SHFL32
+  UNSPEC_SHFL64
+  UNSPEC_UNSHFL32
+  UNSPEC_UNSHFL64
+  UNSPEC_XPERMN
+  UNSPEC_XPERMB
+  UNSPEC_XPERMH
+  UNSPEC_XPERMW
+  UNSPEC_BMEXT32
+  UNSPEC_BMEXT64
+  UNSPEC_BMDEP32
+  UNSPEC_BMDEP64
+  UNSPEC_CLMUL
+  UNSPEC_CRC32
+  UNSPEC_CRC32C
 
   ;; Stack tie
   UNSPEC_TIE
+
+  ;; Crypto
+  UNSPEC_AES32ESMI
+  UNSPEC_AES32ESI
+  UNSPEC_AES32DSMI
+  UNSPEC_AES32DSI
 
   ;; Amethyst
   UNSPEC_AMETHYST_CROT
@@ -173,10 +198,12 @@
 ;; multi	multiword sequence (or user asm statements)
 ;; nop		no operation
 ;; ghost	an instruction that produces no real code
+;; bitmanip     bit manipulation extension
+;; crypto       cryptography extension
 (define_attr "type"
   "unknown,branch,jump,call,load,fpload,store,fpstore,
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
-   fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip"
+   fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,crypto"
   (cond [(eq_attr "got" "load") (const_string "load")
 
 	 ;; If a doubleword move uses these expensive instructions,
@@ -2529,6 +2556,7 @@
   [(set_attr "length" "0")]
 )
 (include "bitmanip.md")
+(include "crypto.md")
 
 ;; This fixes a failure with gcc.c-torture/execute/pr64242.c at -O2 for a
 ;; 32-bit target when using -mtune=sifive-7-series.  The first sched pass
