@@ -199,11 +199,12 @@
 ;; nop		no operation
 ;; ghost	an instruction that produces no real code
 ;; bitmanip     bit manipulation extension
+;; clmul        carryless multiply and CRC
 ;; crypto       cryptography extension
 (define_attr "type"
   "unknown,branch,jump,call,load,fpload,store,fpstore,
    mtc,mfc,const,arith,logical,shift,slt,imul,idiv,move,fmove,fadd,fmul,
-   fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,crypto"
+   fmadd,fdiv,fcmp,fcvt,fsqrt,multi,auipc,sfb_alu,nop,ghost,bitmanip,clmul,crypto"
   (cond [(eq_attr "got" "load") (const_string "load")
 
 	 ;; If a doubleword move uses these expensive instructions,

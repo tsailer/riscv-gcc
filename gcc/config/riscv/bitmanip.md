@@ -565,7 +565,9 @@
 				 (match_operand:SI 2 "register_operand" "r")] UNSPEC_CLMUL)))]
   "TARGET_ZBC && !TARGET_64BIT"
   "clmul\t%0,%1,%2"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "riscv_clmulhsi"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -573,7 +575,9 @@
 					      (match_operand:SI 2 "register_operand" "r")] UNSPEC_CLMUL) (const_int 16))))]
   "TARGET_ZBC && !TARGET_64BIT"
   "clmulh\t%0,%1,%2"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "riscv_clmulrsi"
   [(set (match_operand:SI 0 "register_operand" "=r")
@@ -581,7 +585,9 @@
 					      (match_operand:SI 2 "register_operand" "r")] UNSPEC_CLMUL) (const_int 15))))]
   "TARGET_ZBC && !TARGET_64BIT"
   "clmulr\t%0,%1,%2"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "SI")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "riscv_clmuldi"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -589,7 +595,9 @@
 				 (match_operand:DI 2 "register_operand" "r")] UNSPEC_CLMUL)))]
   "TARGET_ZBC && TARGET_64BIT"
   "clmul\t%0,%1,%2"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "riscv_clmulhdi"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -597,7 +605,9 @@
 					      (match_operand:DI 2 "register_operand" "r")] UNSPEC_CLMUL) (const_int 32))))]
   "TARGET_ZBC && TARGET_64BIT"
   "clmulh\t%0,%1,%2"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "riscv_clmulrdi"
   [(set (match_operand:DI 0 "register_operand" "=r")
@@ -605,63 +615,81 @@
 					      (match_operand:DI 2 "register_operand" "r")] UNSPEC_CLMUL) (const_int 31))))]
   "TARGET_ZBC && TARGET_64BIT"
   "clmulr\t%0,%1,%2"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "DI")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "riscv_crc32b<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 8)] UNSPEC_CRC32))]
   "TARGET_ZBR"
   "crc32.b\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "riscv_crc32h<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 16)] UNSPEC_CRC32))]
   "TARGET_ZBR"
   "crc32.h\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "riscv_crc32w<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 32)] UNSPEC_CRC32))]
   "TARGET_ZBR"
   "crc32.w\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "riscv_crc32d<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 64)] UNSPEC_CRC32))]
   "TARGET_ZBR && TARGET_64BIT"
   "crc32.d\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "8")])
 
 (define_insn "riscv_crc32cb<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 8)] UNSPEC_CRC32C))]
   "TARGET_ZBR"
   "crc32c.b\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "1")])
 
 (define_insn "riscv_crc32ch<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 16)] UNSPEC_CRC32C))]
   "TARGET_ZBR"
   "crc32c.h\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "2")])
 
 (define_insn "riscv_crc32cw<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 32)] UNSPEC_CRC32C))]
   "TARGET_ZBR"
   "crc32c.w\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "4")])
 
 (define_insn "riscv_crc32cd<mode>"
   [(set (match_operand:X 0 "register_operand" "=r")
 	(unspec:X [(match_operand:X 1 "register_operand" "r") (const_int 64)] UNSPEC_CRC32C))]
   "TARGET_ZBR && TARGET_64BIT"
   "crc32c.d\t%0,%1"
-  [(set_attr "type" "bitmanip")])
+  [(set_attr "type" "clmul")
+   (set_attr "mode" "<X:MODE>")
+   (set_attr "amethyst_cycle" "8")])
 
 ;;; ??? bmat
 

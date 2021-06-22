@@ -158,7 +158,7 @@
 
 (define_reservation "amethyst_rfboth" "amethyst_rfeven+amethyst_rfodd")
 
-(define_cpu_unit "amethyst_imul, amethyst_idiv" "amethyst")
+(define_cpu_unit "amethyst_imul, amethyst_idiv, amethyst_clmul" "amethyst")
 
 (define_insn_reservation "amethyst_controlflow" 0
   (eq_attr "type" "branch,jump,call")
@@ -295,3 +295,67 @@
 (define_insn_reservation "amethyst_imul8_rfboth" 8
   (and (and (eq_attr "type" "imul") (eq_attr "amethyst_cycle" "!1,2,4")) (eq_attr "amethyst_rfwriteports" "both"))
   "amethyst_pipea+amethyst_rfboth+amethyst_imul, amethyst_imul * 7")
+
+(define_insn_reservation "amethyst_clmul1_rfnone" 1
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "1")) (eq_attr "amethyst_rfwriteports" "none"))
+  "amethyst_pipea+amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul1_rfeven" 1
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "1")) (eq_attr "amethyst_rfwriteports" "even"))
+  "amethyst_pipea+amethyst_rfeven+amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul1_rfodd" 1
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "1")) (eq_attr "amethyst_rfwriteports" "odd"))
+  "amethyst_pipea+amethyst_rfodd+amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul1_rfboth" 1
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "1")) (eq_attr "amethyst_rfwriteports" "both"))
+  "amethyst_pipea+amethyst_rfboth+amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul2_rfnone" 2
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "2")) (eq_attr "amethyst_rfwriteports" "none"))
+  "amethyst_pipea+amethyst_clmul, amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul2_rfeven" 2
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "2")) (eq_attr "amethyst_rfwriteports" "even"))
+  "amethyst_pipea+amethyst_rfeven+amethyst_clmul, amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul2_rfodd" 2
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "2")) (eq_attr "amethyst_rfwriteports" "odd"))
+  "amethyst_pipea+amethyst_rfodd+amethyst_clmul, amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul2_rfboth" 2
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "2")) (eq_attr "amethyst_rfwriteports" "both"))
+  "amethyst_pipea+amethyst_rfboth+amethyst_clmul, amethyst_clmul")
+
+(define_insn_reservation "amethyst_clmul4_rfnone" 4
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "4")) (eq_attr "amethyst_rfwriteports" "none"))
+  "amethyst_pipea+amethyst_clmul, amethyst_clmul * 3")
+
+(define_insn_reservation "amethyst_clmul4_rfeven" 4
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "4")) (eq_attr "amethyst_rfwriteports" "even"))
+  "amethyst_pipea+amethyst_rfeven+amethyst_clmul, amethyst_clmul * 3")
+
+(define_insn_reservation "amethyst_clmul4_rfodd" 4
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "4")) (eq_attr "amethyst_rfwriteports" "odd"))
+  "amethyst_pipea+amethyst_rfodd+amethyst_clmul, amethyst_clmul * 3")
+
+(define_insn_reservation "amethyst_clmul4_rfboth" 4
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "4")) (eq_attr "amethyst_rfwriteports" "both"))
+  "amethyst_pipea+amethyst_rfboth+amethyst_clmul, amethyst_clmul * 3")
+
+(define_insn_reservation "amethyst_clmul8_rfnone" 8
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "!1,2,4")) (eq_attr "amethyst_rfwriteports" "none"))
+  "amethyst_pipea+amethyst_clmul, amethyst_clmul * 7")
+
+(define_insn_reservation "amethyst_clmul8_rfeven" 8
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "!1,2,4")) (eq_attr "amethyst_rfwriteports" "even"))
+  "amethyst_pipea+amethyst_rfeven+amethyst_clmul, amethyst_clmul * 7")
+
+(define_insn_reservation "amethyst_clmul8_rfodd" 8
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "!1,2,4")) (eq_attr "amethyst_rfwriteports" "odd"))
+  "amethyst_pipea+amethyst_rfodd+amethyst_clmul, amethyst_clmul * 7")
+
+(define_insn_reservation "amethyst_clmul8_rfboth" 8
+  (and (and (eq_attr "type" "clmul") (eq_attr "amethyst_cycle" "!1,2,4")) (eq_attr "amethyst_rfwriteports" "both"))
+  "amethyst_pipea+amethyst_rfboth+amethyst_clmul, amethyst_clmul * 7")
