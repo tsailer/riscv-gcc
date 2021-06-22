@@ -38,7 +38,7 @@
         (plus:SI (match_operand:SI 1 "lui_operand"         " L")
                  (match_operand:SI 2 "const_arith_operand" " I")))]
   "TARGET_AMETHYST"
-  "lui\t%0,%1;\taddi\t%0,%0,%2"
+  "li\t%0,%1+%2"
   [(set_attr "type" "const")
    (set_attr "mode" "SI")
    (set_attr "insnpair" "yes")])
